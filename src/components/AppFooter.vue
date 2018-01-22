@@ -6,7 +6,7 @@
   </footer>
 </template>
 
-<style >
+<style lang="scss" scoped>
 .ev-appfooter {
   position: absolute;
   bottom: 0;

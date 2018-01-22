@@ -8,8 +8,6 @@
   </button>
   <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" class="ev-appnav__logo"></a>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-
-
     <!-- Not logged in -->
     <template>
       <ul class="navbar-nav mr-auto">

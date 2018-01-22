@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -45,5 +45,4 @@ body {
 .app-content {
   padding: 60px 15px 0;
 }
-
 </style>

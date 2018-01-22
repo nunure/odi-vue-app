@@ -1,0 +1,14 @@
+#app .multiselect__tags {
+  border: $input-btn-border-width solid $input-border-color;
+}
+
+#app .multiselect, .multiselect__input, .multiselect__single {
+  font-size: $font-size-base;
+}
+
+#app .multiselect--active .multiselect__tags {
+  color: $input-color-focus;
+  background-color: $input-bg-focus;
+  border-color: $input-border-focus;
+  outline: none;
+}

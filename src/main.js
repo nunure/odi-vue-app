@@ -9,7 +9,6 @@ import './assets/style/global.scss';
 /* Twitter Bootstrap JS (this could also be handled in an app.js file) */
 require('bootstrap');
 
-/* Twitter Bootstrap JS (this could also be handled in an app.js file) */
 Vue.use(VueResource);
 
 Vue.config.productionTip = false;
@@ -17,7 +16,11 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  // Attach the Vue instance to the window,
+  // so it's available globally.
+  created() {
+    window.Vue = this;
+  },
   router,
-  components: { App },
-  template: '<App/>',
+  render: h => h(App),
 });

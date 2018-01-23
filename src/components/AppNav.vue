@@ -1,52 +1,39 @@
 <template>
-<!-- Fixed navbar -->
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse ev-appnav">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-  data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-  aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" class="ev-appnav__logo"></a>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <!-- Not logged in -->
-    <template>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <router-link class="nav-link" to="login">Login
-          <span class="sr-only">(current)</span></router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="signup" class="nav-link" href="#">Signup</router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/prograhammer/example-vue-project/blob/master/README.md">
-            Tutorial
-          </a>
-        </li>
-      </ul>
-    </template>
-
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+    aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <a  v-on:click="setActive('home')" class="navbar-brand" href="/">
+        <img src="../assets/images/logo.png" class="ev-appnav__logo"></a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a v-on:click="setActive('home')" class="nav-item nav-link"
+          :class="{active: isActive('home')}" href="/">Accueil
+          <span class="sr-only">(current)</span></a>
+          <a v-on:click="setActive('questionary')" class="nav-item nav-link"
+          :class="{active: isActive('questionary')}" href="#">Questionnaire</a>
+          <a v-on:click="setActive('contact')" class="nav-item nav-link"
+          :class="{active: isActive('contact')}" href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
   </div>
-</nav>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      searchText: '',
-      searchFlag: '',
-    };
+    return { activeItem: 'home' };
   },
   methods: {
-    submitSearch() {
-      this.$store.commit(
-        'APPNAV_SEARCH',
-        {
-          searchText: this.searchText,
-          searchTimestamp: Date.now(),
-        },
-      );
+    isActive(menuItem) {
+      return this.activeItem === menuItem;
+    },
+    setActive(menuItem) {
+      this.activeItem = menuItem; // no need for Vue.set()
     },
   },
 };

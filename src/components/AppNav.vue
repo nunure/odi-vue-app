@@ -13,8 +13,8 @@
           <a v-on:click="setActive('home')" class="nav-item nav-link"
           :class="{active: isActive('home')}" href="/">Accueil
           <span class="sr-only">(current)</span></a>
-          <a v-on:click="setActive('questionary')" class="nav-item nav-link"
-          :class="{active: isActive('questionary')}" href="#">Questionnaire</a>
+          <a v-on:click="setActive('questionnaire')" class="nav-item nav-link"
+          :class="{active: isActive('questionnaire')}" href="questionnaire">Questionnaire</a>
           <a v-on:click="setActive('contact')" class="nav-item nav-link"
           :class="{active: isActive('contact')}" href="#">Contact</a>
         </div>

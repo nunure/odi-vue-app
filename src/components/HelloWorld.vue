@@ -1,22 +1,27 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <h1>{{ msg }}</h1><br/>
+    <h2>Essential Informations about bacon</h2>
+    <p>
+      Bacon ipsum dolor amet alcatra boudin drumstick biltong ribeye swine pork belly salami chuck.
+       Ball tip chicken turkey cupim landjaeger corned beef alcatra pork loin short loin brisket
+       drumstick. Bacon jerky swine t-bone. Chuck biltong ground round prosciutto ham hock ribeye
+       meatball jerky leberkas tri-tip boudin sausage ball tip pork shank. Meatball cow pancetta
+       flank venison short ribs ham hock short loin. Swine andouille pork belly cupim tenderloin
+       pancetta filet mignon strip steak salami doner sausage t-bone brisket.
+    </p>
+    <h3>More informations</h3>
+    <p>
+      Eu tail tri-tip ad consectetur filet mignon turkey irure. Shankle sint bresaola ullamco do,
+      drumstick burgdoggen commodo venison short loin flank pork belly. Exercitation frankfurter
+      shank, in minim pancetta tempor filet mignon mollit excepteur ipsum in. Culpa ea ipsum
+      cupim pig porchetta nostrud strip steak, cupidatat frankfurter anim ad pancetta burgdoggen
+      pastrami. Pork filet mignon aliquip, dolor boudin pig short loin laboris est ribeye fatback.
+      Salami jowl culpa fugiat. Strip steak duis dolor drumstick qui deserunt sausage ribeye et
+      hamburger nostrud in andouille
+    </p>
+    <h4>A picture is worth a thousand words</h4>
+    <img src="https://baconmockup.com/300/200/" class="ev-appnav__logo">
   </div>
 </template>
 
@@ -25,7 +30,7 @@ export default {
   name: 'hello',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Welcome to si wonderfull website',
     };
   },
 };

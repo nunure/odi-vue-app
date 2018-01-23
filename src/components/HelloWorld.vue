@@ -30,7 +30,7 @@ export default {
   name: 'hello',
   data() {
     return {
-      msg: 'Welcome to si wonderfull website',
+      msg: 'Welcome to this wonderfull website',
     };
   },
 };

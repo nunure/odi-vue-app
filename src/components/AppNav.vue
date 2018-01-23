@@ -6,38 +6,28 @@
     aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <a  v-on:click="setActive('home')" class="navbar-brand" href="/">
-        <img src="../assets/images/logo.png" class="ev-appnav__logo"></a>
+      <router-link tag="a" to="/" >
+        <a class="navbar-brand nav-link">
+          <img src="../assets/images/logo.png" class="ev-appnav__logo">
+        </a>
+      </router-link>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
-          <a v-on:click="setActive('home')" class="nav-item nav-link"
-          :class="{active: isActive('home')}" href="/">Accueil
-          <span class="sr-only">(current)</span></a>
-          <a v-on:click="setActive('questionnaire')" class="nav-item nav-link"
-          :class="{active: isActive('questionnaire')}" href="questionnaire">Questionnaire</a>
-          <a v-on:click="setActive('contact')" class="nav-item nav-link"
-          :class="{active: isActive('contact')}" href="#">Contact</a>
+          <router-link tag="li" to="/" >
+            <a class="nav-item nav-link">Accueil
+            <span class="sr-only">(current)</span></a>
+          </router-link>
+          <router-link tag="li" to="questionnaire" >
+            <a class="nav-item nav-link">Questionnaire</a>
+          </router-link>
+          <router-link tag="li" to="#" >
+            <a class="nav-item nav-link">Contact</a>
+          </router-link>
         </div>
       </div>
     </nav>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return { activeItem: 'home' };
-  },
-  methods: {
-    isActive(menuItem) {
-      return this.activeItem === menuItem;
-    },
-    setActive(menuItem) {
-      this.activeItem = menuItem; // no need for Vue.set()
-    },
-  },
-};
-</script>
 
 <style scoped>
 /*

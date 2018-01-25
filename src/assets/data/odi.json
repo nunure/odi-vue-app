@@ -1,0 +1,82 @@
+{
+  "Intensité de la douleur": [
+    "En ce moment, je ne ressens aucune douleur.",
+    "En ce moment, j'ai des douleurs très légères.",
+    "En ce moment, j'ai des douleurs modérées.",
+    "En ce moment, j'ai des douleurs assez intenses.",
+    "En ce moment, j'ai des douleurs très intenses.",
+    "En ce moment, sont les pires que l'on puisse imaginer."
+  ],
+  "Soins personnels (se laver, s'habiller, etc.)": [
+    "Je peux effectuer normalement mes soins personnels sans douleur supplémentaire.",
+    "Je peux effectuer normalement mes soins personnels, mais c'est très douloureux.",
+    "Je dois effectuer mes soins personnels avec précaution et lenteur, et je ressens des douleurs.",
+    "J'ai besoin d'aide pour les soins personnels, mais j'arrive encore à effectuer la plus grande partie de ceux-ci seul(e).",
+    "J'ai besoin d'aide tous les jours pour la plupart des mes soins personnels.",
+    "Je ne peux plus m'habiller, je me lave avec difficulté et je reste au lit."
+  ],
+  "Soulever des charges": [
+    "Je peux soulever des charges lourdes sans augmentation des douleurs.",
+    "Je peux soulever des charges lourdes, mais cela occasionne une augmentation des douleurs.",
+    "Les douleurs m'empêchent de soulever de lourdes charges depuis le sol, mais cela reste possible si elles sont sur un approprié (par ex : sur une table).",
+    "Les douleurs m'empêchent de soulever des charges lourdes, mais je peux soulever de légères à modérées si elles sont sur un approprié.",
+    "Je ne peux soulever que de très légères charges.",
+    "Je ne peux rien soulever ni porter du tout."
+  ],
+  "Marche à pied": [
+    "Les douleurs ne m'empêchent pas de marcher, quelle que soit la distance.",
+    "Les douleurs m'empêchent de marcher au-delà de 1 km.",
+    "Les douleurs m'empêchent de marcher au-delà de 250m.",
+    "Les douleurs m'empêchent de marcher au-delà de 100m.",
+    "Je ne peux marcher qu'avec une canne ou des béquilles.",
+    "Je reste au lit la plupart du temps et dois me trainer jusqu'aux toilettes."
+  ],
+  "Position assise": [
+    "Je peux rester assis(e) aussi longtemps que je le désire sur n'importe quel siège.",
+    "Je peux rester assis(e) aussi longtemps que je le désire sur mon siège favori.",
+    "Les douleurs m'empêchent de rester assis(e) plus de 1 heure.",
+    "Les douleurs m'empêchent de rester assis(e) plus de 1/2 heure.",
+    "Les douleurs m'empêchent de rester assis(e) plus de 10 minutes.",
+    "Les douleurs m'empêchent toute position assise."
+  ],
+  "Position debout": [
+    "Je peux rester debout aussi longtemps que je le désire sans douleur supplémentaire.",
+    "Je peux rester debout aussi longtemps que je le désire, mais cela occasionne des douleurs supplémentaires.",
+    "Les douleurs m'empêchent de rester debout plus de 1 heure.",
+    "Les douleurs m'empêchent de rester debout plus de 1/2 heure.",
+    "Les douleurs m'empêchent de rester debout plus de 10 minutes.",
+    "Les douleurs m'empêchent de me tenir debout."
+  ],
+  "Sommeil": [
+    "Mon sommeil n'est jamais perturbé par la douleur.",
+    "Mon sommeil est parfois perturbé par la douleur.",
+    "À cause de la douleur, je dors moins de 6 heures.",
+    "À cause de la douleur, je dors moins de 4 heures.",
+    "À cause de la douleur, je dors moins de 2 heures.",
+    "La douleur m'empêche complètement de dormir."
+  ],
+  "Vie sexuelle": [
+    "Ma vie sexuelle est normale et n'occasionne pas de douleurs supplémentaires.",
+    "Ma vie sexuelle est normale, mais occasionne parfois quelques douleurs supplémentaires.",
+    "Ma vie sexuelle est presque normale, mais très douloureuse.",
+    "Ma vie sexuelle est fortement réduite à cause des douleurs.",
+    "Ma vie sexuelle est presque inexistante à cause des douleurs.",
+    "Les douleurs m'empêchent toute vie sexuelle."
+  ],
+  "Vie sociale (sport, cinéma, danse, souper entre amis)": [
+    "Ma vie sociale est normale et n'a pas d'effet sur la douleur.",
+    "Ma vie sociale est normale, mais elle augmente la douleur.",
+    "La douleur n'a pas d'effet sur ma vie sociale, sauf pour des activités demandant plus d'énergie (sport par exemple).",
+    "La douleur limite ma vie sociale et je ne sors plus aussi souvent.",
+    "La douleur a limité ma vie sociale à ce qui se passe chez moi, à la maison.",
+    "Je n'ai plus de vie sociale à cause du mal de dos."
+  ],
+  "Déplacement (en voiture ou par les transports en commun)": [
+    "Je peux voyager partout sans douleur.",
+    "Je peux voyager partout, mais cela occasionne une augmentation des douleurs.",
+    "Les douleurs sont bien présentes, mais je peux effectuer un trajet de plus de deux heures",
+    "Les douleurs m'empêchent tout trajet de plus d'une heure.",
+    "Les douleurs ne me permettent que de courts trajets nécessaires de moins de 30 minutes.",
+    "Les douleurs m'empêchent tout trajet, sauf pour recevoir un traitement."
+  ]
+ }

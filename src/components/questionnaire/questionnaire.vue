@@ -1,41 +1,31 @@
 <template>
 <div class="qcm">
-  <h1> yolooo </h1>
-  <ul>
-    <li v-for="item in items">
-        <input type="radio" v-model="checked" :value="item.txt"> {{ item.txt }}
-    </li>
-  </ul>
+  <h1> Oswestry disability index [ODI]</h1>
+  <div v-for="(subjects, title, index) in questions">
+    <h5>{{ title }} </h5>
+      <ul>
+        <div class="form-check" v-for="subjects, id in subjects">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" :name="index" :id="'option' + index + '-' + id">
+              {{ subjects }}
+          </label>
+        </div>
+      </ul>
+    </div>
+  </div>
 
-  {{ checked }}
-</div>
- <!-- <div id='example-3'>
-    <input type="radio" id="jack" value="Jack" v-model="picked">
-    <label for="jack">Jack</label>
-    <input type="radio" id="john" value="John" v-model="picked">
-    <label for="john">John</label>
-    <input type="radio" id="mike" value="Mike" v-model="picked">
-    <label for="mike">Mike</label>
-    <br>
-    <span>Checked names: {{ picked }}</span>
-  </div>-->
 </template>
 
 <script>
+import questions from '@/assets/data/odi.json';
+
 export default{
   name: 'qcm',
   data() {
     return {
-      items: [{ txt: 'foo', val: 1 }, { txt: 'bar', val: 2 }],
+      questions,
       checked: '',
     };
   },
 };
-/*
-export default{
-  name: '#example-3',
-  data: {
-    picked: []
-  }
-} */
 </script>

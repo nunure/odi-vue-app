@@ -13,6 +13,17 @@ Vue.use(VueResource);
 
 Vue.config.productionTip = false;
 
+Vue.component('message', {
+  props: ['title', 'msg'],
+  template: `
+          <div>
+            <h3>{{ title }}</h3>
+            <p>{{ msg }}</p>
+            <br/>
+          </div>
+  `,
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

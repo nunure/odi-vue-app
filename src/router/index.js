@@ -9,8 +9,9 @@ Vue.use(Router);
 const router = new Router({
   mode: 'history',
   routes: [
+    { path: '/', redirect: '/accueil' },
     {
-      path: '/',
+      path: '/accueil',
       name: 'HelloWorld',
       component: HelloWorld,
     },
@@ -18,6 +19,11 @@ const router = new Router({
       path: '/questionnaire',
       name: 'Questionnaire',
       component: Questionnaire,
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: HelloWorld,
     },
   ],
 });

@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
+  <div class="AppBody">
     <h1>{{ title }}</h1><br/>
 
     <message title="Essential Informations about bacon" msg="Bacon ipsum dolor amet alcatra boudin
@@ -24,9 +24,21 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
+Vue.component('message', {
+  props: ['title', 'msg'],
+  template: `
+          <div>
+            <h3>{{ title }}</h3>
+            <p>{{ msg }}</p>
+            <br/>
+          </div>
+  `,
+});
 
 export default {
-  name: 'root',
+  name: 'AppBody',
   data() {
     return {
       title: 'Welcome to this wonderfull website',
@@ -35,20 +47,3 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

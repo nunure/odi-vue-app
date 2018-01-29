@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container AppNav">
     <nav class="navbar navbar-expand-lg navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
     data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
@@ -11,24 +11,45 @@
           <img src="../assets/images/logo.png" class="ev-appnav__logo">
         </a>
       </router-link>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav">
-          <router-link tag="li" to="/" >
-            <a class="nav-item nav-link">Accueil
-            <span class="sr-only">(current)</span></a>
-          </router-link>
-          <router-link tag="li" to="questionnaire" >
-            <a class="nav-item nav-link">Questionnaire</a>
-          </router-link>
-          <router-link tag="li" to="#" >
-            <a class="nav-item nav-link">Contact</a>
-          </router-link>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+            <tab name="Accueil"></tab>
+            <tab name="Questionnaire"></tab>
+            <tab name="Contact"></tab>
+          </div>
         </div>
-      </div>
     </nav>
   </div>
 </template>
 
+<script>
+import Vue from 'vue';
+
+Vue.component('tab', {
+
+  template: `
+    <router-link tag="li" :to="href">
+      <a class="nav-item nav-link" >{{ name }}</a>
+    </router-link>
+  `,
+
+  props: {
+    name: { required: true },
+  },
+
+  computed: {
+    href() {
+      return `${this.name.toLowerCase().replace(/ /g, '-')}`;
+    },
+  },
+});
+
+export default{
+  name: 'AppNav',
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /*
   You can use BEM style even though you are scoped. Helps to reason about
@@ -37,10 +58,5 @@
 .ev-appnav__logo {
   width: 40px;
 }
-.ev-appnav__search {
-  margin-right: 10px;
-}
-.ev-appnav__logout {
-  margin-top: 1px;
-}
+
 </style>

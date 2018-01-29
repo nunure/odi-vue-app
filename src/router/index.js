@@ -26,6 +26,8 @@ const router = new Router({
       component: HelloWorld,
     },
   ],
+  linkActiveClass: "active", // active class for non-exact links.
+  linkExactActiveClass: "active", // active class for *exact* links.
 });
 
 export default router;

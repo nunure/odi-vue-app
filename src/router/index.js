@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
-import Questionnaire from '@/components/questionnaire/questionnaire';
+import Questionnaire from '@/components/questionnaire/Questionnaire';
+import MainContact from '@/components/contact/MainContact';
 
 
 Vue.use(Router);
@@ -23,11 +24,11 @@ const router = new Router({
     {
       path: '/contact',
       name: 'Contact',
-      component: HelloWorld,
+      component: MainContact,
     },
   ],
-  linkActiveClass: "active", // active class for non-exact links.
-  linkExactActiveClass: "active", // active class for *exact* links.
+  linkActiveClass: 'active', // active class for non-exact links.
+  linkExactActiveClass: 'active', // active class for *exact* links.
 });
 
 export default router;

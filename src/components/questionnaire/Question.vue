@@ -31,17 +31,19 @@ export default{
   },
   methods: {
     next() {
-      this.index += 1;
-      this.direction = 'right';
-      if (this.index >= this.slidesCount) {
-        this.index = 0;
+      if (this.$parent.answers[`question_${this.index + 1}`] != null) {
+        this.index += 1;
+        this.direction = 'right';
+        if (this.index >= this.slidesCount - 1) {
+          this.index = this.slidesCount - 1;
+        }
       }
     },
     prev() {
       this.index -= 1;
       this.direction = 'left';
       if (this.index < 0) {
-        this.index = this.slidesCount - 1;
+        this.index = 0;
       }
     },
     goto(index) {

@@ -4,12 +4,13 @@
     <question>
       <question-slide class="carousel" v-for="(subjects, title, index) in questions" :key="index"
       :index="index">
-        <h5>{{ title }} </h5>
-        <!--{{ addPickedId() }}-->
+        <h5>{{ index + 1 }} : {{ title }} </h5>
+        <!--{{ addAnswers(index) }}-->
         <ul>
           <div class="form-check" v-for="(subjects, id) in subjects" :key="id">
             <label class="form-check-label">
-              <input class="form-check-input" type="radio" :name="index" >
+              <input class="form-check-input" type="radio" :name="index"
+              :value="id" @click="odiAnswers(index, id)">
                 {{ subjects }}
             </label>
           </div>
@@ -17,41 +18,47 @@
       </question-slide>
     </question>
   </div>
-  <!--
-  <div>
-    <h1> Oswestry disability index [ODI]</h1>
-    <div v-for="(subjects, title, index) in questions" :key="index">
-      <h5>{{ title }} </h5>
-      {{ addPickedId() }}
-      <ul>
-        <div class="form-check" v-for="(subjects, id) in subjects" :key="id">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" :name="index" >
-              {{ subjects }}
-          </label>
-        </div>
-      </ul>
-    </div>
-    <button type="button" class="btn btn-lg btn-primary">Valider</button>
-  </div>-->
-
 </template>
 
 <script>
+import questions from '@/assets/data/odi.json';
 import Question from '@/components/questionnaire/Question';
 import QuestionSlide from '@/components/questionnaire/QuestionSlide';
-import questions from '@/assets/data/odi.json';
 
 export default{
   data() {
     return {
       questions,
-      answers: [],
+      answers: { question_1: null,
+        question_2: null,
+        question_3: null,
+        question_4: null,
+        question_5: null,
+        question_6: null,
+        question_7: null,
+        question_8: null,
+        question_9: null,
+        question_10: null,
+      },
     };
   },
   components: {
     Question,
     QuestionSlide,
+  },
+  methods: {
+    addAnswers(index) {
+      // this.answers.push(`answer-${index}`);
+      this.answers[index] = null;
+    },
+    odiAnswers(index, id) {
+      // alert('toto');
+      this.answers[`question_${index + 1}`] = id;
+      // this.answers.push(id);
+    },
+    /* this.questions.forEach((question, i) => {
+      this.answers[i] = null;
+    }); */
   },
 };
 

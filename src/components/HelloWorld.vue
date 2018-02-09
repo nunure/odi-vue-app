@@ -2,15 +2,15 @@
   <div class="AppBody">
     <h1>{{ title }}</h1><br/>
 
-    <message title="Essential Informations about bacon" msg="Bacon ipsum dolor amet alcatra boudin
+    <message title="Essential Informations about bacon"> Bacon ipsum dolor amet alcatra boudin
     drumstick biltong ribeye swine pork belly salami chuck. Ball tip chicken turkey cupim landjaeger
      corned beef alcatra pork loin short loin brisketdrumstick. Bacon jerky swine t-bone. Chuck
      biltong ground round prosciutto ham hock ribeye meatball jerky leberkas tri-tip boudin sausage
      ball tip pork shank. Meatball cow pancetta flank venison short ribs ham hock short loin. Swine
      andouille pork belly cupim tenderloin pancetta filet mignon strip steak salami doner sausage
-     t-bone brisket."></message>
+     t-bone brisket.</message>
 
-    <message title="More informations" msg="Eu tail tri-tip ad consectetur filet mignon turkey
+    <message title="More informations"> Eu tail tri-tip ad consectetur filet mignon turkey
     irure. Shankle sint bresaola ullamco do, drumstick burgdoggen commodo venison short loin flank
     pork belly. Exercitation frankfurter shank, in minim pancetta tempor filet mignon mollit
     excepteur ipsum in. Culpa ea ipsum cupim pig porchetta nostrud strip steak, cupidatat
@@ -24,19 +24,6 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
-Vue.component('message', {
-  props: ['title', 'msg'],
-  template: `
-          <div>
-            <h3>{{ title }}</h3>
-            <p>{{ msg }}</p>
-            <br/>
-          </div>
-  `,
-});
-
 export default {
   name: 'AppBody',
   data() {

@@ -27,7 +27,6 @@ import questions from '@/assets/data/odi.json';
 import Question from '@/components/questionnaire/Question';
 import QuestionSlide from '@/components/questionnaire/QuestionSlide';
 
-
 export default{
   data() {
     return {

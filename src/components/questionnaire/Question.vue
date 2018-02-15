@@ -34,8 +34,9 @@ export default{
       if (this.$parent.answers[`question_${this.index + 1}`] != null) {
         this.index += 1;
         this.direction = 'right';
-        if (this.index >= this.slidesCount - 1) {
+        if (this.index >= this.slidesCount) {
           this.index = this.slidesCount - 1;
+          this.calcOdi();
         }
       }
     },
@@ -50,12 +51,17 @@ export default{
       this.direction = index > this.index ? 'right' : 'left';
       this.index = index;
     },
+    calcOdi() {
+      this.$parent.markOdi = 0;
+      for (const key in this.$parent.answers) {
+        this.$parent.markOdi = this.$parent.markOdi + this.$parent.answers[key];
+      }
+      this.$parent.markOdi = (this.$parent.markOdi / 10) * 20;
+      alert(`${this.$parent.markOdi}%`);
+    },
   },
   mounted() {
-    this.slides = this.$children;/*
-    this.slides.forEach((slide, i) => {
-      slide.index = i;
-    }); */
+    this.slides = this.$children;
   },
 };
 </script>

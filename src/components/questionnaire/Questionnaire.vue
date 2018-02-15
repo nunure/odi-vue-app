@@ -7,7 +7,6 @@
       <question-slide class="carousel" v-for="(subjects, title, index) in questions" :key="index"
       :index="index">
         <h5>{{ index + 1 }} : {{ title }} </h5>
-        <!--{{ addAnswers(index) }}-->
         <ul>
           <div class="form-check" v-for="(subjects, id) in subjects" :key="id">
             <label class="form-check-label">
@@ -42,6 +41,7 @@ export default{
         question_9: null,
         question_10: null,
       },
+      markOdi: 0,
     };
   },
   components: {
@@ -50,45 +50,14 @@ export default{
   },
   methods: {
     addAnswers(index) {
-      // this.answers.push(`answer-${index}`);
       this.answers[index] = null;
     },
     odiAnswers(index, id) {
-      // alert('toto');
       this.answers[`question_${index + 1}`] = id;
-      // this.answers.push(id);
     },
-    /* this.questions.forEach((question, i) => {
-      this.answers[i] = null;
-    }); */
   },
 };
 
-
-/*
-import questions from '@/assets/data/odi.json';
-
-export default{
-  data() {
-    return {
-      questions,
-      checked: [],
-    };
-  },
- addToArray() {
-    for (let i = 0; i < this.question.length; i++) {
-      this.question[i].push({ test: 'Yeey it works!' });
-      for (let j = 0; j < this.question[i].choice_in_random_order.length; j++) {
-        this.question[i].choice_in_random_order[j].push({ is_click: false });
-      }
-    }
-  },
-  methods: {
-    addPickedId() {
-      alert('polo');
-    },
-  },
-}; */
 </script>
 
 <style scoped>

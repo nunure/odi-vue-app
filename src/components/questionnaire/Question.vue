@@ -31,7 +31,10 @@ export default{
   },
   methods: {
     next() {
-      if (this.$parent.answers[`question_${this.index + 1}`] != null) {
+      if (this.index === 0) {
+        this.index += 1;
+        this.direction = 'right';
+      } else if (this.$parent.answers[`question_${this.index}`] != null) {
         this.index += 1;
         this.direction = 'right';
         if (this.index >= this.slidesCount) {

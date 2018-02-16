@@ -1,11 +1,14 @@
 <template>
-  <div class="qcm">
+  <div>
     <message title="Oswestry disability index [ODI]">Répondez à CHAQUE question. ne cochez QUE LA
       case qui vous correspond le mieux (1seule case).
     </message>
     <question>
+      <question-slide class="carousel" :index="0">
+        <informations></informations>
+      </question-slide>
       <question-slide class="carousel" v-for="(subjects, title, index) in questions" :key="index"
-      :index="index">
+      :index="index + 1">
         <h5>{{ index + 1 }} : {{ title }} </h5>
         <ul>
           <div class="form-check" v-for="(subjects, id) in subjects" :key="id">
@@ -25,6 +28,7 @@
 import questions from '@/assets/data/odi.json';
 import Question from '@/components/questionnaire/Question';
 import QuestionSlide from '@/components/questionnaire/QuestionSlide';
+import Informations from '@/components/questionnaire/Informations';
 
 export default{
   data() {
@@ -47,6 +51,7 @@ export default{
   components: {
     Question,
     QuestionSlide,
+    Informations,
   },
   methods: {
     addAnswers(index) {
@@ -79,5 +84,4 @@ button {
 h5 {
   margin-top: 30px;
 }
-
 </style>

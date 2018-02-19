@@ -30,6 +30,9 @@ export default{
 <style scoped>
   .slide-right-enter-active {
     animation: SlideRightIn .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .slide-right-leave-active  {
@@ -40,6 +43,9 @@ export default{
     right: 0;
     bottom: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   @keyframes SlideRightIn {
@@ -54,6 +60,9 @@ export default{
 
  .slide-left-enter-active {
     animation: SlideLeftIn .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .slide-left-leave-active  {
@@ -64,6 +73,9 @@ export default{
     right: 0;
     bottom: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   @keyframes SlideLeftIn {

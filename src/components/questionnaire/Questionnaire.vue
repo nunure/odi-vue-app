@@ -1,14 +1,13 @@
 <template>
   <div>
-    <question>
+    <question id="qcm">
       <question-slide class="carousel" :index="0">
         <informations></informations>
       </question-slide>
-      <question-slide class="carousel" v-for="(subjects, title, index) in questions" :key="index"
-      :index="index + 1">
+      <!--<question-slide class="carousel" v-for="(subjects, title, index) in questions"
+      :key="index" :index="index + 1">
         <odi-questions>{{ index + 1 }} : {{ title }}</odi-questions :subjects="subjects">
-      </question-slide>
-        <!--
+      </question-slide>-->
       <question-slide class="carousel" v-for="(subjects, title, index) in questions" :key="index"
       :index="index + 1">
         <h5>{{ index + 1 }} : {{ title }} </h5>
@@ -21,7 +20,7 @@
             </label>
           </div>
         </ul>
-      </question-slide>-->
+      </question-slide>
     </question>
   </div>
 </template>
@@ -88,4 +87,13 @@ button {
 h5 {
   margin-top: 30px;
 }
+
+#qcm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
 </style>

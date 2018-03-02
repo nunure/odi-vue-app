@@ -4,8 +4,11 @@
       <question-slide class="carousel" :index="0">
         <informations></informations>
       </question-slide>
+      <question-slide class="carousel" :index="1">
+        <question-part-1></question-part-1>
+      </question-slide>
       <question-slide class="carousel" v-for="(subjects, title, index) in questions" :key="index"
-      :index="index + 1">
+      :index="index + 2">
         <h5>{{ index + 1 }} : {{ title }} </h5>
         <ul>
           <div class="form-check" v-for="(subjects, id) in subjects" :key="id">
@@ -26,6 +29,7 @@ import questions from '@/assets/data/odi.json';
 import Question from '@/components/questionnaire/Question';
 import QuestionSlide from '@/components/questionnaire/QuestionSlide';
 import Informations from '@/components/questionnaire/Informations';
+import QuestionPart1 from '@/components/questionnaire/questions/QuestionPart1';
 
 export default{
   data() {
@@ -50,6 +54,7 @@ export default{
     Question,
     QuestionSlide,
     Informations,
+    QuestionPart1,
   },
   methods: {
     addAnswers(index) {

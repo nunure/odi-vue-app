@@ -5,7 +5,7 @@
     <button class="carousel__nav carousel__next btn-circle btn-default " @click.prevent="next">
       <i class="fas fa-chevron-right fa-3x"></i>
     </button>
-    <button class="carousel__nav carousel__prev btn-circle btn-default " @click.prevent="prev">
+    <button class="carousel__nav carousel__prev btn-circle btn-default" @click.prevent="prev">
       <i class="fas fa-chevron-left fa-3x"></i>
     </button>
     <!--<div class="carousel__pagination">
@@ -31,10 +31,10 @@ export default{
   },
   methods: {
     next() {
-      if (this.index === 0) {
+      if (this.index <= 1) {
         this.index += 1;
         this.direction = 'right';
-      } else if (this.$parent.answers[`question_${this.index}`] != null) {
+      } else if (this.$parent.answers[`question_${this.index - 1}`] != null) {
         this.index += 1;
         this.direction = 'right';
         if (this.index >= this.slidesCount) {

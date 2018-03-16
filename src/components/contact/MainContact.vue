@@ -2,10 +2,24 @@
   <div>
     <h1>test</h1>
     <contact>
-      <contact-slide class="carousel" v-for="n in slides" :key="n" :index="n - 1">
-        <img :src="'http://lorempicsum.com/futurama/630/300/' + n" width="100%">
+      <contact-slide class="carousel" v-for="question in datas" :key="question.page"
+      :index="question.page">
+        <h5>{{ question.page + 1 }} : {{ question.label }} </h5>
+        <ul>
+          <div class="form-check" v-for="input in question.values" :key="input.value">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" :name="question.label"
+              :value="input.value">
+                {{ input.name }}
+            </label>
+          </div>
+        </ul>
       </contact-slide>
     </contact>
+    <br/>
+    <p>
+      {{ datas }}
+    </p>
   </div>
 </template>
 
@@ -16,12 +30,20 @@ import ContactSlide from '@/components/contact/ContactSlide';
 export default{
   data() {
     return {
-      slides: 5,
+      datas: [],
+      slides: null,
     };
   },
   components: {
     Contact,
     ContactSlide,
+  },
+  created: function () {
+  this.$http.get('http://localhost:3000/questions')
+    .then(response => {
+      this.datas = response.data;
+      this.slides = Object.keys(this.datas).length;
+    });
   },
 };
 </script>

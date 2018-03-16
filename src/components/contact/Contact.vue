@@ -7,11 +7,11 @@
     </button>
     <button class="carousel__nav carousel__prev btn-circle btn-default " @click.prevent="prev">
       <i class="fas fa-chevron-left fa-3x"></i>
-    </button>
+    </button><!--
     <div class="carousel__pagination">
       <button class="btn-default" v-for="n in slidesCount" :key="n" @click="goto(n-1)"
       :class="{active: n - 1 === index}"></button>
-    </div>
+    </div>-->
   </div>
 </template>
 

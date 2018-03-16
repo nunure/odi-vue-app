@@ -1,0 +1,185 @@
+[
+  {
+    "type": "radios",
+    "label": "Quel est votre docteur ?",
+    "model": "odi",
+    "page": "0",
+    "required": true,
+    "values": [
+      {"name": "Dr P. CHATELLIER", "value": "0"},
+      {"name": "Dr D. BOUAKA", "value": "1"},
+      {"name": "Dr J. LEBHAR", "value": "2"},
+      {"name": "Dr P. KRIEGEL", "value": "3"}
+    ]
+  },
+  {
+    "type": "input",
+    "inputType": "text",
+    "label": "Test input",
+    "model": "odi",
+    "maxLength": 50,
+    "placeholder": "Test Input",
+    "page": "1",
+    "required": true
+  },
+  {
+    "type": "input",
+    "inputType": "text",
+    "label": "Test input",
+    "model": "odi",
+    "maxLength": 50,
+    "placeholder": "Test Input",
+    "page": "1",
+    "required": true
+  },
+  {
+    "type": "radios",
+    "label": "Intensité de la douleur",
+    "model": "odi",
+    "page": "2",
+    "required": true,
+    "values": [
+      {"name": "En ce moment, je ne ressens aucune douleur.", "value": "0"},
+      {"name": "En ce moment, j'ai des douleurs très légères.", "value": "1"},
+      {"name": "En ce moment, j'ai des douleurs modérées.", "value": "2"},
+      {"name": "En ce moment, j'ai des douleurs assez intenses.", "value": "3"},
+      {"name": "En ce moment, j'ai des douleurs très intenses.", "value": "4"},
+      {"name": "En ce moment, sont les pires que l'on puisse imaginer.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Soins personnels (se laver, s'habiller, etc.)",
+    "model": "odi",
+    "page": "3",
+    "required": true,
+    "values": [
+      {"name": "Je peux effectuer normalement mes soins personnels sans douleur supplémentaire.", "value": "0"},
+      {"name": "Je peux effectuer normalement mes soins personnels, mais c'est très douloureux.", "value": "1"},
+      {"name": "Je dois effectuer mes soins personnels avec précaution et lenteur, et je ressens des douleurs.", "value": "2"},
+      {"name": "J'ai besoin d'aide pour les soins personnels, mais j'arrive encore à effectuer la plus grande partie de ceux-ci seul(e).", "value": "3"},
+      {"name": "J'ai besoin d'aide tous les jours pour la plupart des mes soins personnels.", "value": "4"},
+      {"name": "Je ne peux plus m'habiller, je me lave avec difficulté et je reste au lit.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Soulever des charges",
+    "model": "odi",
+    "page": "4",
+    "required": true,
+    "values": [
+      {"name": "Je peux soulever des charges lourdes sans augmentation des douleurs.", "value": "0"},
+      {"name": "Je peux soulever des charges lourdes, mais cela occasionne une augmentation des douleurs.", "value": "1"},
+      {"name": "Les douleurs m'empêchent de soulever de lourdes charges depuis le sol, mais cela reste possible si elles sont sur un approprié (par ex : sur une table).", "value": "2"},
+      {"name": "Les douleurs m'empêchent de soulever des charges lourdes, mais je peux soulever de légères à modérées si elles sont sur un approprié.", "value": "3"},
+      {"name": "Je ne peux soulever que de très légères charges.", "value": "4"},
+      {"name": "Je ne peux rien soulever ni porter du tout.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Marche à pied",
+    "model": "odi",
+    "page": "5",
+    "required": true,
+    "values": [
+      {"name": "Les douleurs ne m'empêchent pas de marcher, quelle que soit la distance.", "value": "0"},
+      {"name": "Les douleurs m'empêchent de marcher au-delà de 1 km.", "value": "1"},
+      {"name": "Les douleurs m'empêchent de marcher au-delà de 250m.", "value": "2"},
+      {"name": "Les douleurs m'empêchent de marcher au-delà de 100m.", "value": "3"},
+      {"name": "Je ne peux marcher qu'avec une canne ou des béquilles.", "value": "4"},
+      {"name": "Je reste au lit la plupart du temps et dois me trainer jusqu'aux toilettes.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Position assise",
+    "model": "odi",
+    "page": "6",
+    "required": true,
+    "values": [
+      {"name": "Je peux rester assis(e) aussi longtemps que je le désire sur n'importe quel siège.", "value": "0"},
+      {"name": "Je peux rester assis(e) aussi longtemps que je le désire sur mon siège favori.", "value": "1"},
+      {"name": "Les douleurs m'empêchent de rester assis(e) plus de 1 heure.", "value": "2"},
+      {"name": "Les douleurs m'empêchent de rester assis(e) plus de 1/2 heure.", "value": "3"},
+      {"name": "Les douleurs m'empêchent de rester assis(e) plus de 10 minutes.", "value": "4"},
+      {"name": "Les douleurs m'empêchent toute position assise.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label":"Position debout",
+    "model": "odi",
+    "page": "7",
+    "required": true,
+    "values": [
+      {"name": "Je peux rester debout aussi longtemps que je le désire sans douleur supplémentaire.", "value": "0"},
+      {"name": "Je peux rester debout aussi longtemps que je le désire, mais cela occasionne des douleurs supplémentaires.", "value": "1"},
+      {"name": "Les douleurs m'empêchent de rester debout plus de 1 heure.", "value": "2"},
+      {"name": "Les douleurs m'empêchent de rester debout plus de 1/2 heure.", "value": "3"},
+      {"name": "Les douleurs m'empêchent de rester debout plus de 10 minutes.", "value": "4"},
+      {"name": "Les douleurs m'empêchent de me tenir debout.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Sommeil",
+    "model": "odi",
+    "page": "8",
+    "required": true,
+    "values": [
+      {"name": "Mon sommeil n'est jamais perturbé par la douleur.", "value": "0"},
+      {"name": "Mon sommeil est parfois perturbé par la douleur.", "value": "1"},
+      {"name": "À cause de la douleur, je dors moins de 6 heures.", "value": "2"},
+      {"name": "À cause de la douleur, je dors moins de 4 heures.", "value": "3"},
+      {"name": "À cause de la douleur, je dors moins de 2 heures.", "value": "4"},
+      {"name": "La douleur m'empêche complètement de dormir.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Vie sexuelle",
+    "model": "odi",
+    "page": "9",
+    "required": true,
+    "values": [
+      {"name": "Ma vie sexuelle est normale et n'occasionne pas de douleurs supplémentaires.", "value": "0"},
+      {"name": "Ma vie sexuelle est normale, mais occasionne parfois quelques douleurs supplémentaires.", "value": "1"},
+      {"name": "Ma vie sexuelle est presque normale, mais très douloureuse.", "value": "2"},
+      {"name": "Ma vie sexuelle est fortement réduite à cause des douleurs.", "value": "3"},
+      {"name": "Ma vie sexuelle est presque inexistante à cause des douleurs.", "value": "4"},
+      {"name": "Les douleurs m'empêchent toute vie sexuelle.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Vie sociale (sport, cinéma, danse, souper entre amis)",
+    "model": "odi",
+    "page": "10",
+    "required": true,
+    "values": [
+      {"name": "Ma vie sociale est normale et n'a pas d'effet sur la douleur.", "value": "0"},
+      {"name": "Ma vie sociale est normale, mais elle augmente la douleur.", "value": "1"},
+      {"name": "La douleur n'a pas d'effet sur ma vie sociale, sauf pour des activités demandant plus d'énergie (sport par exemple).", "value": "2"},
+      {"name": "La douleur limite ma vie sociale et je ne sors plus aussi souvent.", "value": "3"},
+      {"name": "La douleur a limité ma vie sociale à ce qui se passe chez moi, à la maison.", "value": "4"},
+      {"name": "Je n'ai plus de vie sociale à cause du mal de dos.", "value": "5"}
+    ]
+  },
+  {
+    "type": "radios",
+    "label": "Déplacement (en voiture ou par les transports en commun)",
+    "model": "odi",
+    "page": "11",
+    "required": true,
+    "values": [
+      {"name": "Je peux voyager partout sans douleur.", "value": "0"},
+      {"name": "Je peux voyager partout, mais cela occasionne une augmentation des douleurs.", "value": "1"},
+      {"name": "Les douleurs sont bien présentes, mais je peux effectuer un trajet de plus de deux heures", "value": "2"},
+      {"name": "Les douleurs m'empêchent tout trajet de plus d'une heure.", "value": "3"},
+      {"name": "Les douleurs ne me permettent que de courts trajets nécessaires de moins de 30 minutes.", "value": "4"},
+      {"name": "Les douleurs m'empêchent tout trajet, sauf pour recevoir un traitement.", "value": "5"}
+    ]
+  }
+]

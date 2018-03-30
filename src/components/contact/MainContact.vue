@@ -1,46 +1,58 @@
 <template>
   <div>
+
     <h1>test</h1>
     <contact>
       <contact-slide class="carousel" v-for="question in datas" :key="question.page"
       :index="question.page">
-        <h5>{{ question.page + 1 }} : {{ question.label }} </h5>
-        <ul>
-          <div class="form-check" v-for="input in question.values" :key="input.value">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" :name="question.label"
-              :value="input.value">
-                {{ input.name }}
-            </label>
-          </div>
-        </ul>
+        <form>
+          <vue-form-generator :schema="question.template" :model="model" :options="formOptions">
+          </vue-form-generator>
+        </form>
       </contact-slide>
     </contact>
     <br/>
-    <p>
-      {{ datas }}
-    </p>
   </div>
 </template>
 
 <script>
+import VueFormGenerator from 'vue-form-generator';
 import Contact from '@/components/contact/Contact';
 import ContactSlide from '@/components/contact/ContactSlide';
 
-export default{
-  data() {
-    return {
-      datas: [],
-      slides: null,
-    };
-  },
+export default {
   components: {
+    'vue-form-generator': VueFormGenerator.component,
     Contact,
     ContactSlide,
   },
-  created: function () {
-  this.$http.get('http://localhost:3000/questions')
-    .then(response => {
+  data() {
+    return {
+      model: {
+        doctor: null,
+        test1: null,
+        test2: null,
+        odiQuestion1: null,
+        odiQuestion2: null,
+        odiQuestion3: null,
+        odiQuestion4: null,
+        odiQuestion5: null,
+        odiQuestion6: null,
+        odiQuestion7: null,
+        odiQuestion8: null,
+        odiQuestion9: null,
+        odiQuestion10: null,
+      },
+      datas: [],
+      slides: null,
+      formOptions: {
+        validateAfterLoad: true,
+        validateAfterChanged: true,
+      },
+    };
+  },
+  created() {
+    this.$http.get('http://localhost:3000/questions').then((response) => {
       this.datas = response.data;
       this.slides = Object.keys(this.datas).length;
     });
@@ -49,10 +61,10 @@ export default{
 </script>
 
 <style scoped>
-  .carousel {
-     left: 0;
-     right: 0;
-     width: 100%;
-     text-align: center;
-  }
+.carousel {
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
 </style>

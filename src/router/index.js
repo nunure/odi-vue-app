@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
-import Questionnaire from '@/components/questionnaire/Questionnaire';
+import Questionnaire from '@/components/questionnaire/MainQuestion';
 import MainContact from '@/components/contact/MainContact';
 
 

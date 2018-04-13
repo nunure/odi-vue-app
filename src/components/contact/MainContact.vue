@@ -5,7 +5,8 @@
       <contact-slide class="carousel" v-for="question in datas" :key="question.page"
       :index="question.page">
         <form>
-          <vue-form-generator ref="vfg" :schema="question.template" :model="model" :options="formOptions">
+          <vue-form-generator ref="vfg" :schema="question.template" :model="model"
+          :options="formOptions">
           </vue-form-generator>
         </form>
       </contact-slide>
@@ -18,7 +19,7 @@
 import VueFormGenerator from 'vue-form-generator';
 import Contact from '@/components/contact/Contact';
 import ContactSlide from '@/components/contact/ContactSlide';
-import "vue-form-generator/dist/vfg-core.css"
+import 'vue-form-generator/dist/vfg-core.css';
 
 export default {
   components: {

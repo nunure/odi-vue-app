@@ -31,10 +31,12 @@ export default{
   },
   methods: {
     next() {
+      /*
       // Log the kind of error
-      console.log('Error :', this.$parent.$refs.vfg[this.index].errors );
+      console.log('Error :', this.$parent.$refs.vfg[this.index].errors);
       // Call the validation function, return true or false
       console.log('Validate :', this.$parent.$refs.vfg[this.index].validate());
+      */
       if (this.$parent.$refs.vfg[this.index].validate()) {
         this.direction = 'right';
         this.index += 1;

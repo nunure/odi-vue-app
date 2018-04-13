@@ -8,6 +8,9 @@
           "label": "Quel est votre docteur ?",
           "model": "doctor",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Dr P. CHATELLIER",
@@ -37,20 +40,28 @@
         {
           "type": "input",
           "inputType": "text",
-          "label": "Test input",
+          "label": "Test input 1",
           "model": "test1",
-          "maxLength": 50,
+          "min": 5,
+          "max": 50,
           "placeholder": "Test Input",
-          "required": true
+          "required": true,
+          "validator": [
+            "string"
+          ]
         },
         {
           "type": "input",
           "inputType": "text",
-          "label": "Test input",
+          "label": "Test input 2",
           "model": "test2",
-          "maxLength": 50,
+          "min": 5,
+          "max": 50,
           "placeholder": "Test Input",
-          "required": true
+          "required": true,
+          "validator": [
+            "string"
+          ]
         }
       ]
     }
@@ -64,6 +75,9 @@
           "label": "Intensité de la douleur",
           "model": "odiQuestion1",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "En ce moment, je ne ressens aucune douleur.",
@@ -103,6 +117,9 @@
           "label": "Soins personnels (se laver, s'habiller, etc.)",
           "model": "odiQuestion2",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Je peux effectuer normalement mes soins personnels sans douleur supplémentaire.",
@@ -142,6 +159,9 @@
           "label": "Soulever des charges",
           "model": "odiQuestion3",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Je peux soulever des charges lourdes sans augmentation des douleurs.",
@@ -181,6 +201,9 @@
           "label": "Marche à pied",
           "model": "odiQuestion4",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Les douleurs ne m'empêchent pas de marcher, quelle que soit la distance.",
@@ -220,6 +243,9 @@
           "label": "Position assise",
           "model": "odiQuestion5",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Je peux rester assis(e) aussi longtemps que je le désire sur n'importe quel siège.",
@@ -259,6 +285,9 @@
           "label": "Position debout",
           "model": "odiQuestion6",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Je peux rester debout aussi longtemps que je le désire sans douleur supplémentaire.",
@@ -298,6 +327,9 @@
           "label": "Sommeil",
           "model": "odiQuestion7",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Mon sommeil n'est jamais perturbé par la douleur.",
@@ -337,6 +369,9 @@
           "label": "Vie sexuelle",
           "model": "odiQuestion8",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Ma vie sexuelle est normale et n'occasionne pas de douleurs supplémentaires.",
@@ -376,6 +411,9 @@
           "label": "Vie sociale (sport, cinéma, danse, souper entre amis)",
           "model": "odiQuestion9",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Ma vie sociale est normale et n'a pas d'effet sur la douleur.",
@@ -415,6 +453,9 @@
           "label": "Déplacement (en voiture ou par les transports en commun)",
           "model": "odiQuestion10",
           "required": true,
+          "validator": [
+            "required"
+          ],
           "values": [
             {
               "name": "Je peux voyager partout sans douleur.",

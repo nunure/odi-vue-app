@@ -1,12 +1,11 @@
 <template>
   <div>
-
     <h1>test</h1>
     <contact>
       <contact-slide class="carousel" v-for="question in datas" :key="question.page"
       :index="question.page">
         <form>
-          <vue-form-generator :schema="question.template" :model="model" :options="formOptions">
+          <vue-form-generator ref="vfg" :schema="question.template" :model="model" :options="formOptions">
           </vue-form-generator>
         </form>
       </contact-slide>
@@ -19,6 +18,7 @@
 import VueFormGenerator from 'vue-form-generator';
 import Contact from '@/components/contact/Contact';
 import ContactSlide from '@/components/contact/ContactSlide';
+import "vue-form-generator/dist/vfg-core.css"
 
 export default {
   components: {
@@ -46,7 +46,7 @@ export default {
       datas: [],
       slides: null,
       formOptions: {
-        validateAfterLoad: true,
+        validateAfterLoad: false,
         validateAfterChanged: true,
       },
     };

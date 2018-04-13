@@ -31,9 +31,16 @@ export default{
   },
   methods: {
     next() {
-      this.index += 1;
-      this.direction = 'right';
+      // Log the kind of error
+      console.log('Error :', this.$parent.$refs.vfg[this.index].errors );
+      // Call the validation function, return true or false
+      console.log('Validate :', this.$parent.$refs.vfg[this.index].validate());
+      if (this.$parent.$refs.vfg[this.index].validate()) {
+        this.direction = 'right';
+        this.index += 1;
+      }
       if (this.index >= this.slidesCount) {
+        // This is the end of the questionnaire
         this.index = 0;
       }
     },

@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav">
             <tab name="Accueil"></tab>
-            <tab name="MainQuestion"></tab>
+            <tab name="Questionnaire"></tab>
             <tab name="Contact"></tab>
           </div>
         </div>

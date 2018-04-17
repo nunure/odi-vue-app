@@ -18,3 +18,8 @@
   border-color: $input-border-focus;
   outline: none;
 }
+
+.doctor .vue-form-generator .field-radios .radio-list label {
+  display: inline !important;
+  margin:5px;
+}

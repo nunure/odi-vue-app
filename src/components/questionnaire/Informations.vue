@@ -8,6 +8,7 @@
       répondre à vos questions.
     </message>
     <img src="@/assets/images/NFS.jpg" class="img__info">
+    <!--
     <div class="doctor__bloc">
       <label class="form-check-label doctor__input">
         <input class="form-check-input" type="radio" name="doctor">Dr P. CHATELLIER
@@ -22,6 +23,7 @@
         <input class="form-check-input" type="radio" name="doctor">Dr P. KRIEGEL
       </label>
   </div>
+  -->
   </div>
 </template>
 

@@ -8,10 +8,6 @@
     <button class="carousel__nav carousel__prev btn-circle btn-default" @click.prevent="prev">
       <i class="fas fa-chevron-left fa-3x"></i>
     </button>
-    <!--<div class="carousel__pagination">
-      <button class="btn-default" v-for="n in slidesCount" :key="n" @click="goto(n-1)"
-      :class="{active: n - 1 === index}"></button>
-    </div>-->
   </div>
 </template>
 
@@ -31,16 +27,13 @@ export default{
   },
   methods: {
     next() {
-      if (this.index <= 1) {
-        this.index += 1;
+      if (this.$parent.$refs.vfg[this.index].validate()) {
         this.direction = 'right';
-      } else if (this.$parent.answers[`question_${this.index - 1}`] != null) {
         this.index += 1;
-        this.direction = 'right';
-        if (this.index >= this.slidesCount) {
-          this.index = this.slidesCount - 1;
-          this.calcOdi();
-        }
+      }
+      if (this.index >= this.slidesCount) {
+        // This is the end of the questionnaire
+        this.index = 0;
       }
     },
     prev() {
@@ -53,14 +46,6 @@ export default{
     goto(index) {
       this.direction = index > this.index ? 'right' : 'left';
       this.index = index;
-    },
-    calcOdi() {
-      this.$parent.markOdi = 0;
-      for (const key in this.$parent.answers) {
-        this.$parent.markOdi = this.$parent.markOdi + this.$parent.answers[key];
-      }
-      this.$parent.markOdi = (this.$parent.markOdi / 10) * 20;
-      alert(`${this.$parent.markOdi}%`);
     },
   },
   mounted() {

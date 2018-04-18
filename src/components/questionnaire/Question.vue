@@ -29,12 +29,22 @@ export default{
     next() {
       if (this.$parent.$refs.vfg[this.index].validate()) {
         this.direction = 'right';
-        this.index += 1;
+            if (this.index === (this.slidesCount - 1)) {
+              // This is the end of the questionnaire
+              // PUT result to the back
+                this.$http.put('http://localhost:3000/answers', this.$parent.model).then(response => {
+                  // success callback
+                  console.log(response);
+                }, response => {
+                  // @TODO: handle http error
+                  console.error(response);
+                });
+            }
+            else {
+              this.index += 1;
+            }
       }
-      if (this.index >= this.slidesCount) {
-        // This is the end of the questionnaire
-        this.index = 0;
-      }
+
     },
     prev() {
       this.index -= 1;

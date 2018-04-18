@@ -39,21 +39,7 @@ export default {
   },
   data() {
     return {
-      model: {
-        doctor: null,
-        test1: null,
-        test2: null,
-        odiQuestion1: null,
-        odiQuestion2: null,
-        odiQuestion3: null,
-        odiQuestion4: null,
-        odiQuestion5: null,
-        odiQuestion6: null,
-        odiQuestion7: null,
-        odiQuestion8: null,
-        odiQuestion9: null,
-        odiQuestion10: null,
-      },
+      model: {},
       datas: [],
       slides: null,
       formOptions: {
@@ -63,10 +49,21 @@ export default {
     };
   },
   created() {
+    // get all questionnaire
     this.$http.get('http://localhost:3000/questions').then((response) => {
       this.datas = response.data;
       this.slides = Object.keys(this.datas).length;
-    });
+    }, response => {
+      // @TODO: handle http error
+      console.error(response);
+  });
+    // get a new empty model for responses
+    this.$http.get('http://localhost:3000/answers/create').then((response) => {
+      this.model = response.data.model;
+    }, response => {
+      // @TODO: handle http error
+      console.error(response);
+  });
   },
 };
 

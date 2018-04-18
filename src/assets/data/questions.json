@@ -72,7 +72,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Intensité de la douleur",
+          "label": "1: Intensité de la douleur",
           "model": "odiQuestion1",
           "required": true,
           "validator": [
@@ -114,7 +114,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Soins personnels (se laver, s'habiller, etc.)",
+          "label": "2: Soins personnels (se laver, s'habiller, etc.)",
           "model": "odiQuestion2",
           "required": true,
           "validator": [
@@ -156,7 +156,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Soulever des charges",
+          "label": "3: Soulever des charges",
           "model": "odiQuestion3",
           "required": true,
           "validator": [
@@ -198,7 +198,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Marche à pied",
+          "label": "4: Marche à pied",
           "model": "odiQuestion4",
           "required": true,
           "validator": [
@@ -240,7 +240,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Position assise",
+          "label": "5: Position assise",
           "model": "odiQuestion5",
           "required": true,
           "validator": [
@@ -282,7 +282,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Position debout",
+          "label": "6: Position debout",
           "model": "odiQuestion6",
           "required": true,
           "validator": [
@@ -324,7 +324,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Sommeil",
+          "label": "7: Sommeil",
           "model": "odiQuestion7",
           "required": true,
           "validator": [
@@ -366,7 +366,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Vie sexuelle",
+          "label": "8: Vie sexuelle",
           "model": "odiQuestion8",
           "required": true,
           "validator": [
@@ -408,7 +408,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Vie sociale (sport, cinéma, danse, souper entre amis)",
+          "label": "9: Vie sociale (sport, cinéma, danse, souper entre amis)",
           "model": "odiQuestion9",
           "required": true,
           "validator": [
@@ -450,7 +450,7 @@
       "fields": [
         {
           "type": "radios",
-          "label": "Déplacement (en voiture ou par les transports en commun)",
+          "label": "10: Déplacement (en voiture ou par les transports en commun)",
           "model": "odiQuestion10",
           "required": true,
           "validator": [

@@ -32,7 +32,7 @@ export default{
             if (this.index === (this.slidesCount - 1)) {
               // This is the end of the questionnaire
               // PUT result to the back
-                this.$http.put('http://localhost:3000/answers', this.$parent.model).then(response => {
+                this.$http.put('http://localhost:3000/answers', this.$parent.answer).then(response => {
                   // success callback
                   console.log(response);
                 }, response => {

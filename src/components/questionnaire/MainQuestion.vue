@@ -6,12 +6,12 @@
         <form>
           <div v-if="question.page === 0" class="doctor" >
             <informations></informations>
-            <vue-form-generator  ref="vfg" :schema="question.template" :model="model"
+            <vue-form-generator  ref="vfg" :schema="question.template" :model="answer.model"
             :options="formOptions" >
           </vue-form-generator>
           </div>
           <div v-else>
-            <vue-form-generator ref="vfg" :schema="question.template" :model="model"
+            <vue-form-generator ref="vfg" :schema="question.template" :model="answer.model"
               :options="formOptions" >
             </vue-form-generator>
           </div>
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      model: {},
+      answer: {},
       datas: [],
       slides: null,
       formOptions: {
@@ -58,8 +58,8 @@ export default {
       console.error(response);
   });
     // get a new empty model for responses
-    this.$http.get('http://localhost:3000/answers/create').then((response) => {
-      this.model = response.data.model;
+    this.$http.get('http://localhost:3000/answers/createEmpty').then((response) => {
+      this.answer = response.data;
     }, response => {
       // @TODO: handle http error
       console.error(response);

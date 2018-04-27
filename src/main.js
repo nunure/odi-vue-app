@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import '@fortawesome/fontawesome';
 import '@fortawesome/fontawesome-free-solid';
+import 'pikaday';
+import 'moment';
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import router from './router';

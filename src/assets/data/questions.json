@@ -40,11 +40,9 @@
         {
           "type": "input",
           "inputType": "text",
-          "label": "Test input 1",
-          "model": "test1",
-          "min": 5,
-          "max": 50,
-          "placeholder": "Test Input",
+          "label": "Nom",
+          "model": "first_name",
+          "placeholder": "LE GARREC",
           "required": true,
           "validator": [
             "string"
@@ -53,15 +51,95 @@
         {
           "type": "input",
           "inputType": "text",
-          "label": "Test input 2",
-          "model": "test2",
-          "min": 5,
-          "max": 50,
-          "placeholder": "Test Input",
+          "label": "Prénom",
+          "model": "last_name",
+          "placeholder": "Erwan",
           "required": true,
           "validator": [
             "string"
           ]
+        },
+        {
+          "type": "pikaday",
+          "label": "Date de naissance",
+          "model": "birth_date",
+          "required": true,
+          "placeholder": "26/10/1985",
+          "pikadayOptions": {
+            "format": "DD/MM/YYY",
+            "position": "top-left"
+          }
+        },
+        {
+          "type": "input",
+          "inputType": "text",
+          "label": "Nom de votre médecin traitant",
+          "model": "medical_consultant",
+          "placeholder": "Dr House",
+          "required": true,
+          "validator": [
+            "string"
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Profession",
+          "model": "job",
+          "required": true,
+          "values": [
+            "Agriculteurs exploitants",
+            "Artisans, commerçants, chefs d'entreprise",
+            "Cadres et professions intellectuelles supérieures",
+            "Professions intermédiaires",
+            "Employés",
+            "Ouvriers",
+            "Retraités",
+            "Autres personnes sans activité professionnelle"
+          ]
+        },
+        {
+          "type": "input",
+          "inputType": "text",
+          "label": "loisirs",
+          "model": "activities",
+          "placeholder": "Echecs, natation",
+          "required": true,
+          "validator": [
+            "string"
+          ]
+        },
+        {
+          "type": "input",
+          "inputType": "text",
+          "label": "Taille",
+          "model": "size",
+          "placeholder": "180",
+          "required": true,
+          "validator": [
+            "number"
+          ]
+        },
+        {
+          "type": "input",
+          "inputType": "text",
+          "label": "Poids",
+          "model": "weight",
+          "placeholder": "80",
+          "required": true,
+          "validator": [
+            "number"
+          ]
+        },
+        {
+          "type": "rangeSlider",
+          "label": "Rank",
+          "model": "rank",
+          "min": 0,
+          "max": 100,
+          "required": true,
+          "rangeSlideroptions": {
+            "grid": true
+          }
         }
       ]
     }

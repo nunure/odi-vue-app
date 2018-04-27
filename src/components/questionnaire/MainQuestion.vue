@@ -26,12 +26,13 @@ import Question from '@/components/questionnaire/Question';
 import QuestionSlide from '@/components/questionnaire/QuestionSlide';
 import Informations from '@/components/questionnaire/Informations';
 import QuestionPart1 from '@/components/questionnaire/questions/QuestionPart1';
+import 'ion-rangeslider';
 import VueFormGenerator from 'vue-form-generator';
-import 'vue-form-generator/dist/vfg-core.css';
+import 'vue-form-generator/dist/vfg.css'; // optional full css additions
 
 export default {
   components: {
-    'vue-form-generator': VueFormGenerator.component,
+    "vue-form-generator": VueFormGenerator.component,
     Question,
     QuestionSlide,
     Informations,

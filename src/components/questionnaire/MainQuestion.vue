@@ -7,14 +7,22 @@
         :key="question.page"
         :index="question.page">
         <form>
-          <div v-if="question.page === 0" class="doctor" >
+          <div
+            v-if="question.page === 0"
+            class="doctor" >
             <informations/>
-            <vue-form-generator ref="vfg" :schema="question.template" :model="answer.model"
-                                :options="formOptions" />
+            <vue-form-generator
+              ref="vfg"
+              :schema="question.template"
+              :model="answer.model"
+              :options="formOptions" />
           </div>
           <div v-else>
-            <vue-form-generator ref="vfg" :schema="question.template" :model="answer.model"
-                                :options="formOptions" />
+            <vue-form-generator
+              ref="vfg"
+              :schema="question.template"
+              :model="answer.model"
+              :options="formOptions" />
           </div>
         </form>
       </question-slide>
@@ -23,23 +31,23 @@
 </template>
 
 <script>
-import Question from '@/components/questionnaire/Question';
-import QuestionSlide from '@/components/questionnaire/QuestionSlide';
-import Informations from '@/components/questionnaire/Informations';
-import QuestionPart1 from '@/components/questionnaire/questions/QuestionPart1';
-import $ from 'jquery';
-import 'ion-rangeslider';
-import Pikaday from 'pikaday';
-import 'pikaday/css/pikaday.css';
-import VueFormGenerator from 'vue-form-generator';
-import 'vue-form-generator/dist/vfg.css'; // optional full css additions
+import Question from "@/components/questionnaire/Question";
+import QuestionSlide from "@/components/questionnaire/QuestionSlide";
+import Informations from "@/components/questionnaire/Informations";
+import QuestionPart1 from "@/components/questionnaire/questions/QuestionPart1";
+import $ from "jquery";
+import "ion-rangeslider";
+import Pikaday from "pikaday";
+import "pikaday/css/pikaday.css";
+import VueFormGenerator from "vue-form-generator";
+import "vue-form-generator/dist/vfg.css"; // optional full css additions
 
 window.$ = $;
 window.Pikaday = Pikaday;
 
 export default {
   components: {
-    'vue-form-generator': VueFormGenerator.component,
+    "vue-form-generator": VueFormGenerator.component,
     Question,
     QuestionSlide,
     Informations,
@@ -58,7 +66,7 @@ export default {
   },
   created() {
     // get all questionnaire
-    this.$http.get('http://localhost:3000/questions').then(
+    this.$http.get("http://localhost:3000/questions").then(
       response => {
         this.datas = response.data;
         this.slides = Object.keys(this.datas).length;
@@ -69,7 +77,7 @@ export default {
       }
     );
     // get a new empty model for responses
-    this.$http.get('http://localhost:3000/answers/createEmpty').then(
+    this.$http.get("http://localhost:3000/answers/createEmpty").then(
       response => {
         this.answer = response.data;
       },

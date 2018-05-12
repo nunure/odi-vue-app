@@ -2,15 +2,15 @@
 <template>
   <transition :name="transition">
     <div v-show="visible">
-      <slot></slot>
+      <slot/>
     </div>
   </transition>
 </template>
 
 <script>
-export default{
+export default {
   props: {
-    index: { type: Number, default: 0 },
+    index: { type: Number, default: 0 }
   },
   computed: {
     visible() {
@@ -22,70 +22,85 @@ export default{
       }
 
       return null;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
-  .slide-right-enter-active {
-    animation: SlideRightIn .5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.slide-right-enter-active {
+  animation: SlideRightIn 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .slide-right-leave-active  {
-    animation: SlideRightOut .5s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.slide-right-leave-active {
+  animation: SlideRightOut 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  @keyframes SlideRightIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+@keyframes SlideRightIn {
+  from {
+    transform: translateX(100%);
   }
-
-    @keyframes SlideRightOut {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+  to {
+    transform: translateX(0);
   }
+}
 
- .slide-left-enter-active {
-    animation: SlideLeftIn .5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@keyframes SlideRightOut {
+  from {
+    transform: translateX(0);
   }
-
-  .slide-left-leave-active  {
-    animation: SlideLeftOut .5s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  to {
+    transform: translateX(-100%);
   }
+}
 
-  @keyframes SlideLeftIn {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+.slide-left-enter-active {
+  animation: SlideLeftIn 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-left-leave-active {
+  animation: SlideLeftOut 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes SlideLeftIn {
+  from {
+    transform: translateX(-100%);
   }
-
-    @keyframes SlideLeftOut {
-    from { transform: translateX(0); }
-    to { transform: translateX(100%); }
+  to {
+    transform: translateX(0);
   }
+}
 
+@keyframes SlideLeftOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 </style>

@@ -1,14 +1,16 @@
 <template>
   <div>
     <message title="Service de chirurgie orthopédique, traumatologique et réparatrice">
-      <span id="subtitle">Professeur Hervé THOMAZEAU</span><br/><br/>
-      Madame, Monsieur,<br/>
-      Les médecins vous remercient de remplir ce questionnaire avant votre consultation.<br/>
+      <span id="subtitle">Professeur Hervé THOMAZEAU</span><br><br>
+      Madame, Monsieur,<br>
+      Les médecins vous remercient de remplir ce questionnaire avant votre consultation.<br>
       Il servira au bon déroulement de l'entretien et permettra de consacrer plus de temps pour
       répondre à vos questions.
     </message>
-    <img src="@/assets/images/NFS.jpg" class="img__info">
-    <!--
+    <img
+      src="@/assets/images/NFS.jpg"
+      class="img__info">
+      <!--
     <div class="doctor__bloc">
       <label class="form-check-label doctor__input">
         <input class="form-check-input" type="radio" name="doctor">Dr P. CHATELLIER
@@ -28,13 +30,11 @@
 </template>
 
 <script>
-export default{
+export default {
   data() {
-    return {
-    };
-  },
+    return {};
+  }
 };
-
 </script>
 
 
@@ -60,5 +60,4 @@ export default{
   color: grey;
   font-style: italic;
 }
-
 </style>

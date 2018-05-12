@@ -2,30 +2,35 @@
   <div>
     <h1>test</h1>
     <contact>
-      <contact-slide class="carousel" v-for="question in datas" :key="question.page"
-      :index="question.page">
+      <contact-slide
+        class="carousel"
+        v-for="question in datas"
+        :key="question.page"
+        :index="question.page">
         <form>
-          <vue-form-generator ref="vfg" :schema="question.template" :model="model"
-          :options="formOptions">
-          </vue-form-generator>
+          <vue-form-generator
+            ref="vfg"
+            :schema="question.template"
+            :model="model"
+            :options="formOptions"/>
         </form>
       </contact-slide>
     </contact>
-    <br/>
+    <br>
   </div>
 </template>
 
 <script>
-import VueFormGenerator from 'vue-form-generator';
-import Contact from '@/components/contact/Contact';
-import ContactSlide from '@/components/contact/ContactSlide';
-import 'vue-form-generator/dist/vfg-core.css';
+import VueFormGenerator from "vue-form-generator";
+import Contact from "@/components/contact/Contact";
+import ContactSlide from "@/components/contact/ContactSlide";
+import "vue-form-generator/dist/vfg-core.css";
 
 export default {
   components: {
-    'vue-form-generator': VueFormGenerator.component,
+    "vue-form-generator": VueFormGenerator.component,
     Contact,
-    ContactSlide,
+    ContactSlide
   },
   data() {
     return {
@@ -42,22 +47,22 @@ export default {
         odiQuestion7: null,
         odiQuestion8: null,
         odiQuestion9: null,
-        odiQuestion10: null,
+        odiQuestion10: null
       },
       datas: [],
       slides: null,
       formOptions: {
         validateAfterLoad: false,
-        validateAfterChanged: true,
-      },
+        validateAfterChanged: true
+      }
     };
   },
   created() {
-    this.$http.get('http://localhost:3000/questions').then((response) => {
+    this.$http.get("http://localhost:3000/questions").then(response => {
       this.datas = response.data;
       this.slides = Object.keys(this.datas).length;
     });
-  },
+  }
 };
 </script>
 

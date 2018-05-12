@@ -1,51 +1,59 @@
 <template>
   <div class="container AppNav">
     <nav class="navbar navbar-expand-lg navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-    aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <router-link tag="a" to="/" >
+      <button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"/>
+      </button>
+      <router-link
+        tag="a"
+        to="/" >
         <a class="navbar-brand nav-link">
-          <img src="../assets/images/logo.png" class="ev-appnav__logo">
+          <img
+            src="../assets/images/logo.png"
+            class="ev-appnav__logo">
         </a>
       </router-link>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav">
-            <tab name="Accueil"></tab>
-            <tab name="Questionnaire"></tab>
-            <tab name="Contact"></tab>
-          </div>
+      <div
+        class="collapse navbar-collapse"
+        id="navbarCollapse">
+        <div class="navbar-nav">
+          <tab name="Accueil"/>
+          <tab name="Questionnaire"/>
+          <tab name="Contact"/>
         </div>
+      </div>
     </nav>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from "vue";
 
-Vue.component('tab', {
-
+Vue.component("tab", {
+  props: {
+    name: { type: String, required: true }
+  },
+  computed: {
+    href() {
+      return `${this.name.toLowerCase().replace(/ /g, "-")}`;
+    }
+  },
   template: `
     <router-link tag="li" :to="href">
       <a class="nav-item nav-link" >{{ name }}</a>
     </router-link>
-  `,
-
-  props: {
-    name: { required: true },
-  },
-
-  computed: {
-    href() {
-      return `${this.name.toLowerCase().replace(/ /g, '-')}`;
-    },
-  },
+  `
 });
 
-export default{
-  name: 'AppNav',
+export default {
+  name: "AppNav"
 };
 </script>
 
@@ -58,5 +66,4 @@ export default{
 .ev-appnav__logo {
   width: 40px;
 }
-
 </style>

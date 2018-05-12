@@ -1,26 +1,25 @@
 <template>
   <div id="app">
-    <app-nav></app-nav>
+    <app-nav/>
     <div class="container app-content">
-      <router-view></router-view>
+      <router-view/>
     </div>
-    <app-footer></app-footer>
+    <app-footer/>
   </div>
 
 </template>
 
 
 <script>
-import AppNav from './AppNav';
-import AppFooter from './AppFooter';
+import AppNav from "./AppNav";
+import AppFooter from "./AppFooter";
 
 export default {
-  name: 'app',
+  name: "App",
   components: { AppNav, AppFooter },
   data() {
-    return {
-    };
-  },
+    return {};
+  }
 };
 </script>
 

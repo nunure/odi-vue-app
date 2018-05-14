@@ -3,7 +3,7 @@
     "page": 0,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "Quel est votre docteur ?",
         "name": "doctor",
         "required": true,
@@ -88,14 +88,14 @@
         "required": true
       },
       {
-        "type": "input_string",
+        "type": "input_number",
         "label": "Taille",
         "name": "size",
         "placeholder": "180",
         "required": true
       },
       {
-        "type": "input_string",
+        "type": "input_number",
         "label": "Poids",
         "name": "weight",
         "placeholder": "80",
@@ -113,7 +113,7 @@
     "page": 2,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "1: Intensité de la douleur",
         "name": "odiQuestion1",
         "required": true,
@@ -150,7 +150,7 @@
     "page": 3,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "2: Soins personnels (se laver, s'habiller, etc.)",
         "name": "odiQuestion2",
         "required": true,
@@ -193,7 +193,7 @@
     "page": 4,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "3: Soulever des charges",
         "name": "odiQuestion3",
         "required": true,
@@ -234,7 +234,7 @@
     "page": 5,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "4: Marche à pied",
         "name": "odiQuestion4",
         "required": true,
@@ -273,7 +273,7 @@
     "page": 6,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "5: Position assise",
         "name": "odiQuestion5",
         "required": true,
@@ -315,7 +315,7 @@
     "page": 7,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "6: Position debout",
         "name": "odiQuestion6",
         "required": true,
@@ -357,7 +357,7 @@
     "page": 8,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "7: Sommeil",
         "name": "odiQuestion7",
         "required": true,
@@ -394,7 +394,7 @@
     "page": 9,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "8: Vie sexuelle",
         "name": "odiQuestion8",
         "required": true,
@@ -436,7 +436,7 @@
     "page": 10,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "9: Vie sociale (sport, cinéma, danse, souper entre amis)",
         "name": "odiQuestion9",
         "required": true,
@@ -478,7 +478,7 @@
     "page": 11,
     "fields": [
       {
-        "type": "radios",
+        "type": "radio",
         "label": "10: Déplacement (en voiture ou par les transports en commun)",
         "name": "odiQuestion10",
         "required": true,

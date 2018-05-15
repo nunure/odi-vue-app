@@ -102,7 +102,7 @@
         "required": true
       },
       {
-        "type": "slider",
+        "type": "range",
         "label": "douleur",
         "name": "rank",
         "required": true

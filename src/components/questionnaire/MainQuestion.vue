@@ -55,8 +55,13 @@
               </option>
             </select><br>
           </div>
+          <!-- input type date, max is date of the day for birth day -->
+          <div v-else-if="question.type === 'range'">
+            <input
+              type="range"
+              :name="question.name">
+          </div>
           <div v-else>
-
             <p>v else: {{ question.type }}</p>
           </div>
         </div>

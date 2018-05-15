@@ -43,6 +43,18 @@
               min="1900-01-01"
               :max="getDate()">
           </div>
+          <!-- input type select -->
+          <div v-else-if="question.type === 'select'">
+            <select name="test">
+              <option value="" selected disabled hidden> - </option>
+              <option
+                v-for="input in question.values"
+                :key="input.value"
+                :value="input.value">
+                {{ input.name }}
+              </option>
+            </select><br>
+          </div>
           <div v-else>
 
             <p>v else: {{ question.type }}</p>

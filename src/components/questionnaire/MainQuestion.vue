@@ -40,7 +40,8 @@
             <input
               type="date"
               :name="question.name"
-              min="1900-01-01">
+              min="1900-01-01"
+              :max="getDate()">
           </div>
           <div v-else>
 
@@ -90,15 +91,20 @@ export default {
   },
   methods: {
     getDate: function() {
+      function pad(number) {
+        if (number < 10) {
+          return "0" + number;
+        }
+        return number;
+      }
       var date_tmp = new Date();
 
-      date_tmp.toLocaleDateString("fr-FR");
       return (
-        date_tmp.getFullYear() +
+        pad(date_tmp.getFullYear()) +
         "-" +
-        date_tmp.getMonth() +
+        pad(date_tmp.getMonth() + 1) +
         "-" +
-        date_tmp.getDate()
+        pad(date_tmp.getDate())
       );
     }
   }

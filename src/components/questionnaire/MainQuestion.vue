@@ -11,55 +11,30 @@
           <label>{{ question.label }} :</label>
           <!-- radio button -->
           <div v-if="question.type === 'radio'">
-            <div
-              v-for="input in question.values"
-              :key="input.value">
-              <input
-                type="radio"
-                :name="question.name"
-                :value="input.value">
-              {{ input.name }}<br>
-            </div>
-          </div>
-          <!-- input type text -->
-          <div v-else-if="question.type === 'input_string'">
-            <input
-              type="text"
+            <RadioType
               :name="question.name"
-              :placeholder="question.placeholder">
+              :values="question.values"/>
           </div>
-          <!-- input type number -->
-          <div v-else-if="question.type === 'input_number'">
-            <input
-              type="number"
+          <!-- Input type -->
+          <div v-else-if="question.type === 'input_number' || question.type === 'input_string'">
+            <InputType
+              :type="question.type"
               :name="question.name"
-              :placeholder="question.placeholder">
+              :placeholder="question.placeholder"/>
           </div>
-          <!-- input type date, max is date of the day for birth day -->
+          <!-- Date type , max is date of the day for birth day -->
           <div v-else-if="question.type === 'date'">
-            <input
-              type="date"
-              :name="question.name"
-              min="1900-01-01"
-              :max="getDate()">
+            <DateType :name="question.name"/>
           </div>
-          <!-- input type select -->
+          <!-- select type -->
           <div v-else-if="question.type === 'select'">
-            <select name="test">
-              <option value="" selected disabled hidden> - </option>
-              <option
-                v-for="input in question.values"
-                :key="input.value"
-                :value="input.value">
-                {{ input.name }}
-              </option>
-            </select><br>
+            <SelectType
+              :name="question.name"
+              :values="question.values"/>
           </div>
-          <!-- input type date, max is date of the day for birth day -->
+          <!-- Range type min 0 and max 100 -->
           <div v-else-if="question.type === 'range'">
-            <input
-              type="range"
-              :name="question.name">
+            <RangeType :name="question.name"/>
           </div>
           <div v-else>
             <p>v else: {{ question.type }}</p>
@@ -67,15 +42,24 @@
         </div>
       </form>
     </div>
-    <h3>datas</h3>
-    <p>{{ datas }}</p>
-    <h3>slides</h3>
-    <p>{{ slides }}</p>
   </div>
 </template>
 
 <script>
+import InputType from "@/components/questionnaire/forms/InputType";
+import DateType from "@/components/questionnaire/forms/DateType";
+import RadioType from "@/components/questionnaire/forms/RadioType";
+import SelectType from "@/components/questionnaire/forms/SelectType";
+import RangeType from "@/components/questionnaire/forms/RangeType";
+
 export default {
+  components: {
+    InputType,
+    DateType,
+    RadioType,
+    SelectType,
+    RangeType
+  },
   data() {
     return {
       datas: [],
@@ -106,24 +90,6 @@ export default {
       }
     );
   },
-  methods: {
-    getDate: function() {
-      function pad(number) {
-        if (number < 10) {
-          return "0" + number;
-        }
-        return number;
-      }
-      var date_tmp = new Date();
-
-      return (
-        pad(date_tmp.getFullYear()) +
-        "-" +
-        pad(date_tmp.getMonth() + 1) +
-        "-" +
-        pad(date_tmp.getDate())
-      );
-    }
-  }
+  methods: {}
 };
 </script>

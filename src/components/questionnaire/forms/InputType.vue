@@ -3,7 +3,8 @@
     <input
       :type="getType(type)"
       :name="name"
-      :placeholder="placeholder">
+      :placeholder="placeholder"
+      required>
   </div>
 </template>
 

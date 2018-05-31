@@ -7,7 +7,8 @@
         <input
           type="radio"
           :name="name"
-          :value="input.value">
+          :value="input.value"
+          required>
         {{ input.name }}
       </label><br>
     </div>

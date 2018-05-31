@@ -1,6 +1,8 @@
 <template>
   <div>
-    <select :name="name">
+    <select
+      :name="name"
+      required>
       <option
         value=""
         selected

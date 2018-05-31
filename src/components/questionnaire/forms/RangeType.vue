@@ -4,7 +4,8 @@
       type="range"
       :name="name"
       min="0"
-      max="100">
+      max="100"
+      required>
   </div>
 </template>
 

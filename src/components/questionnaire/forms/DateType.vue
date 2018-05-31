@@ -4,7 +4,8 @@
       type="date"
       :name="name"
       min="1900-01-01"
-      :max="getDate()">
+      :max="getDate()"
+      required>
   </div>
 </template>
 

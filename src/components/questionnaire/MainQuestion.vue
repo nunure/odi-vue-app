@@ -107,7 +107,22 @@ export default {
   },
   methods: {
     onSubmit() {
-      if (this.activeStep++ >= this.nbPage - 1) this.activeStep = 0;
+      if (this.activeStep++ >= this.nbPage - 1) {
+        // This is the end of the questionnaire
+        // PUT result to the back
+        this.$http
+          .put("http://localhost:3000/answers", this.answer)
+          .then(
+            response => {
+              this.$router.push("send_question");
+              console.log(response);
+            },
+            response => {
+              // @TODO: handle http error
+              console.error(response);
+            }
+          );
+      }
     },
     onPrevious() {
       if (this.activeStep-- <= 0) this.activeStep = 0;

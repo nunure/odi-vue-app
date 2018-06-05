@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1> Questionnaire envoyé :) </h1>
-
-    <button typ="button" @click="startQuestionnaire()">Nouveau questionnaire</button>
+    <button
+      type="button"
+      @click="startQuestionnaire()">Nouveau questionnaire</button>
   </div>
 </template>
 

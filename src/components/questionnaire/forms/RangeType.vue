@@ -1,11 +1,9 @@
 <template>
   <div>
-    <input
-      type="range"
-      :name="name"
-      min="0"
-      max="100"
-      required>
+    <el-slider
+      v-model="$parent.answer[name]"
+      :min="0"
+      :max="100"/>
   </div>
 </template>
 

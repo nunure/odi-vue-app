@@ -25,12 +25,16 @@
               :name="question.name"
               :values="question.values"/>
           </div>
-          <!-- Input type -->
-          <div v-else-if="question.type === 'input_number' || question.type === 'input_string'">
-            <InputType
-              :type="question.type"
+          <!-- Input text type -->
+          <div v-else-if="question.type === 'input_string'">
+            <InputTextType
               :name="question.name"
               :placeholder="question.placeholder"/>
+          </div>
+          <!-- Input number type -->
+          <div v-else-if="question.type === 'input_number'">
+            <InputNumberType
+            :name="question.name"/>
           </div>
           <!-- Date type , max is date of the day for birth day -->
           <div v-else-if="question.type === 'date'">
@@ -40,6 +44,7 @@
           <div v-else-if="question.type === 'select'">
             <SelectType
               :name="question.name"
+              :placeholder="question.placeholder"
               :values="question.values"/>
           </div>
           <!-- Range type min 0 and max 100 -->
@@ -60,7 +65,8 @@
 </template>
 
 <script>
-import InputType from "@/components/questionnaire/forms/InputType";
+import InputTextType from "@/components/questionnaire/forms/InputTextType";
+import InputNumberType from "@/components/questionnaire/forms/InputNumberType";
 import DateType from "@/components/questionnaire/forms/DateType";
 import RadioType from "@/components/questionnaire/forms/RadioType";
 import SelectType from "@/components/questionnaire/forms/SelectType";
@@ -68,7 +74,8 @@ import RangeType from "@/components/questionnaire/forms/RangeType";
 
 export default {
   components: {
-    InputType,
+    InputTextType,
+    InputNumberType,
     DateType,
     RadioType,
     SelectType,
@@ -79,7 +86,8 @@ export default {
       datas: [],
       nbPage: 0,
       date: "",
-      activeStep: 0
+      activeStep: 0,
+      answer: []
     };
   },
   created() {
@@ -97,7 +105,7 @@ export default {
     // get a new empty model for responses
     this.$http.get("http://localhost:3000/answers/createEmpty").then(
       response => {
-        this.answer = response.data;
+        this.answer = response.data.model;
       },
       response => {
         // @TODO: handle http error
@@ -110,18 +118,16 @@ export default {
       if (this.activeStep++ >= this.nbPage - 1) {
         // This is the end of the questionnaire
         // PUT result to the back
-        this.$http
-          .put("http://localhost:3000/answers", this.answer)
-          .then(
-            response => {
-              this.$router.push("send_question");
-              console.log(response);
-            },
-            response => {
-              // @TODO: handle http error
-              console.error(response);
-            }
-          );
+        this.$http.put("http://localhost:3000/answers", this.answer).then(
+          response => {
+            this.$router.push("send_question");
+            console.log(response);
+          },
+          response => {
+            // @TODO: handle http error
+            console.error(response);
+          }
+        );
       }
     },
     onPrevious() {

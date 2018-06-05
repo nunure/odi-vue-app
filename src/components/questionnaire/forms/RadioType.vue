@@ -1,17 +1,13 @@
 <template>
   <div>
-    <div
+    <el-radio-group
+      v-model="$parent.answer[name]"
       v-for="input in values"
       :key="input.value">
-      <label>
-        <input
-          type="radio"
-          :name="name"
-          :value="input.value"
-          required>
-        {{ input.name }}
-      </label><br>
-    </div>
+      <el-radio
+      :label="input.value">
+      {{ input.name }}</el-radio>
+    </el-radio-group>
   </div>
 </template>
 

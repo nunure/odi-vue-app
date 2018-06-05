@@ -1,22 +1,15 @@
 <template>
   <div>
-    <select
+    <el-select
+      v-model="$parent.answer[name]"
       :name="name"
-      required>
-      <option
-        value=""
-        selected
-        disabled
-        hidden>
-        -
-      </option>
-      <option
+      clearable>
+      <el-option
         v-for="input in values"
         :key="input.value"
-        :value="input.value">
-        {{ input.name }}
-      </option>
-    </select><br>
+        :value="input.value"
+        :label="input.name"/>
+    </el-select><br>
   </div>
 </template>
 

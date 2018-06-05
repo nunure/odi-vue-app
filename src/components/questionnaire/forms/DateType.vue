@@ -1,11 +1,9 @@
 <template>
   <div>
-    <input
+    <el-date-picker
+      v-model="$parent.answer[name]"
       type="date"
-      :name="name"
-      min="1900-01-01"
-      :max="getDate()"
-      required>
+      default-value="2000-01-01"/>
   </div>
 </template>
 

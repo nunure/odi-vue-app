@@ -1,10 +1,20 @@
 <template>
   <div>
+    <el-steps
+      :active="activeStep"
+      finish-status="success"
+      simple
+      style="margin-top: 20px">
+      <el-step title="Step 1" />
+      <el-step title="Step 2" />
+      <el-step title="Step 3" />
+    </el-steps>
     <div
       class="carousel"
       v-for="questions in datas"
-      :key="questions.page">
-      <form>
+      :key="questions.page"
+      v-show="visible(questions.page)">
+      <form @submit.prevent="onSubmit">
         <div
           v-for="question in questions.fields"
           :key="question.name">
@@ -40,6 +50,10 @@
             <p>v else: {{ question.type }}</p>
           </div>
         </div>
+        <button
+          type="button"
+          @click="onPrevious()">Retour</button>
+        <button type="submit">Valider</button>
       </form>
     </div>
   </div>
@@ -63,8 +77,9 @@ export default {
   data() {
     return {
       datas: [],
-      slides: {},
-      date: ""
+      nbPage: 0,
+      date: "",
+      activeStep: 0
     };
   },
   created() {
@@ -72,7 +87,7 @@ export default {
     this.$http.get("http://localhost:3000/questions").then(
       response => {
         this.datas = response.data;
-        this.slides = Object.keys(this.datas).length;
+        this.nbPage = Object.keys(this.datas).length;
       },
       response => {
         // @TODO: handle http error
@@ -90,6 +105,16 @@ export default {
       }
     );
   },
-  methods: {}
+  methods: {
+    onSubmit() {
+      if (this.activeStep++ >= this.nbPage - 1) this.activeStep = 0;
+    },
+    onPrevious() {
+      if (this.activeStep-- <= 0) this.activeStep = 0;
+    },
+    visible(key) {
+      return key === this.activeStep;
+    }
+  }
 };
 </script>

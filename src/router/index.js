@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Questionnaire from "@/components/questionnaire/MainQuestion";
+import SendQuestion from "@/components/questionnaire/SendQuestion";
 
 Vue.use(Router);
 
@@ -12,6 +13,11 @@ const router = new Router({
       path: "/questionnaire",
       name: "Questionnaire",
       component: Questionnaire
+    },
+    {
+      path: "/send_question",
+      name: "SendQuestion",
+      component: SendQuestion
     }
   ],
   linkActiveClass: "active", // active class for non-exact links.

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-date-picker
-      v-model="$parent.answer[name]"
+      v-model="inputVal"
       type="date"
       default-value="2000-01-01"/>
   </div>
@@ -10,7 +10,25 @@
 <script>
 export default {
   props: {
-    name: { type: String, default: "" }
+    question: { type: Object, default: null },
+    value: { type: String, default: null }
+  },
+  data() {
+    return {
+      rule: [
+        {
+          required: true,
+          message: "Veuillez renseigner ce champ",
+          trigger: "change"
+        }
+      ],
+      inputVal: this.value
+    };
+  },
+  watch: {
+    inputVal(val) {
+      this.$emit("input", val);
+    }
   },
   methods: {
     getDate: function() {

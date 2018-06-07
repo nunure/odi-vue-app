@@ -1,22 +1,42 @@
 <template>
   <div>
-    <el-radio-group
-      v-model="$parent.answer[name]"
-      v-for="input in values"
-      :key="input.value">
-      <el-radio
-      :label="input.value">
-      {{ input.name }}</el-radio>
-    </el-radio-group>
+    <el-form-item
+      :label="question.label"
+      :prop="question.name"
+      :rules="rule">
+      <el-radio-group
+        v-model="inputVal"
+        v-for="input in question.values"
+        :key="input.value">
+        <el-radio
+        :label="input.name">{{ input.name }}</el-radio>
+      </el-radio-group>
+    </el-form-item>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    values: { type: Array, default: null },
-    name: { type: String, default: "" }
+    question: { type: Object, default: null },
+    value: { type: String, default: null }
   },
-  methods: {}
+  data() {
+    return {
+      rule: [
+        {
+          required: true,
+          message: "Veuillez sélectionner l'une de ces options",
+          trigger: "change"
+        }
+      ],
+      inputVal: this.value
+    };
+  },
+  watch: {
+    inputVal(val) {
+      this.$emit("input", val);
+    }
+  }
 };
 </script>

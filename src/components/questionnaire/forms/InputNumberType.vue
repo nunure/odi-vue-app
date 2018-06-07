@@ -1,20 +1,36 @@
 <template>
   <div>
     <el-input-number
-      v-model="$parent.answer[name]"
-      :placeholder="placeholder"
-      :name="name"
+      v-model="inputVal"
+      :placeholder="question.placeholder"
+      :name="question.name"
       clearable/>
   </div>
 </template>
 
+
 <script>
 export default {
   props: {
-    name: { type: String, default: "" },
-    placeholder: { type: String, default: "" },
-    type: { type: String, default: "text" }
+    question: { type: Object, default: null },
+    value: { type: Number, default: null }
   },
-  methods: {}
+  data() {
+    return {
+      rule: [
+        {
+          required: true,
+          message: "Veuillez renseigner ce champ",
+          trigger: "change"
+        }
+      ],
+      inputVal: this.value
+    };
+  },
+  watch: {
+    inputVal(val) {
+      this.$emit("input", val);
+    }
+  }
 };
 </script>

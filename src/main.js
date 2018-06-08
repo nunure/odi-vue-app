@@ -6,8 +6,9 @@ import ElementUI from "element-ui";
 import locale from "element-ui/lib/locale/lang/fr";
 import router from "./router";
 import App from "./components/App";
-import "./assets/style/global.css";
+import "./assets/style/global.scss";
 import "element-ui/lib/theme-chalk/index.css";
+import "element-ui/lib/theme-chalk/display.css";
 
 Vue.use(VueResource);
 

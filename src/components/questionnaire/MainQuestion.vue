@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <el-steps
-      :active="activeStep"
-      finish-status="success"
-      simple
-      style="margin-top: 20px">
-      <el-step title="Docteur" />
-      <el-step title="Informations" />
-      <el-step title="ODI" />
-    </el-steps>
-    <div
+  <div class="questionnaire">
+    <el-header>
+      <el-steps
+        :active="activeStep"
+        finish-status="success"
+        simple>
+        <el-step title="Docteur" />
+        <el-step title="Informations" />
+        <el-step title="ODI" />
+      </el-steps>
+    </el-header>
+    <el-main
       v-for="questions in datas"
       :key="questions.page"
       v-show="visible(questions.page)">
 
       <main-form :questions="questions"/>
-
-    </div>
+    </el-main>
   </div>
 </template>
 

@@ -94,7 +94,6 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          console.log("coucou");
           this.populateAnswer();
           this.onSubmit();
         } else {

@@ -1,9 +1,14 @@
 <template>
   <div>
-    <el-slider
-      v-model="inputVal"
-      :min="0"
-      :max="100"/>
+    <el-form-item
+      :label="question.label"
+      :prop="question.name"
+      :rules="rule">
+      <el-slider
+        v-model="inputVal"
+        :min="0"
+        :max="100"/>
+    </el-form-item>
   </div>
 </template>
 

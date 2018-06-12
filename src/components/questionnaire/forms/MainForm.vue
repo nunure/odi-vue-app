@@ -47,12 +47,14 @@
         <p>v else: {{ question.type }}</p>
       </div>
     </div>
-    <el-form-item>
+    <el-form-item class="buttons">
       <el-button
         type="button"
+        class="btn-back"
         @click="onPrevious()">Retour</el-button>
       <el-button
         type="primary"
+        class="btn-submit"
         @click="submitForm('model')">Valider</el-button>
     </el-form-item>
   </el-form>
@@ -103,7 +105,10 @@ export default {
       });
     },
     onSubmit() {
-      if (this.$parent.$parent.activeStep++ >= this.$parent.$parent.nbPage - 1) {
+      if (
+        this.$parent.$parent.activeStep++ >=
+        this.$parent.$parent.nbPage - 1
+      ) {
         // This is the end of the questionnaire
         // PUT result to the back
         this.$http.put("http://localhost:3000/answers", this.answer).then(
@@ -119,7 +124,8 @@ export default {
       }
     },
     onPrevious() {
-      if (this.$parent.$parent.activeStep-- <= 0) this.$parent.$parent.activeStep = 0;
+      if (this.$parent.$parent.activeStep-- <= 0)
+        this.$parent.$parent.activeStep = 0;
     },
     modelCreation(name) {
       this.model[name] = null;

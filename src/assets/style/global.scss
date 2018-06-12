@@ -1,10 +1,11 @@
+// These are all main components that are taking all space available and displaying flex
 html,body {
   height:100%;
   margin: 0px;
 }
 
 .el-container {
-  min-height: 100%;;
+  min-height: 100%;
 }
 
 .el-main {
@@ -25,8 +26,8 @@ html,body {
   min-width: 100%;
 }
 
+// Main form style, putting some color and taking all the space available
 .el-form {
-  text-align: center;
   background-color: #f9fafc;
   min-width: 100%;
   min-height: 100%;
@@ -34,15 +35,52 @@ html,body {
   flex-direction: column;
 }
 
+// Display all forms items flex
 .el-form-item {
+  margin-right: 20px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
 }
 
+// Styling forms label
 .el-form-item__label {
   text-align: left !important;
+  font-weight: bold;
 }
 
+// Flex display to avoid overlow on child element
+.el-form-item__content .el-radio-group {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+// Break line to avoid overflow
+.el-radio__label {
+  white-space: pre-wrap;
+}
+
+// div containing buttons, displaying flex (again) for horizontal alignement
+div.el-form-item.buttons .el-form-item__content {
+  display: flex;
+}
+
+// Submit button align right
+button.el-button.btn-submit.el-button--primary {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+// Back button align left
+button.el-button.btn-back.el-button--button {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+// footer
 .el-footer {
   background: #d3dce6;
   text-align: center;

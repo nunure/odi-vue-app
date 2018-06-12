@@ -1,15 +1,20 @@
 <template>
   <div>
-    <el-select
-      v-model="inputVal"
-      :name="question.name"
-      clearable>
-      <el-option
-        v-for="input in question.values"
-        :key="input.value"
-        :value="input.value"
-        :label="input.name"/>
-    </el-select><br>
+    <el-form-item
+      :label="question.label"
+      :prop="question.name"
+      :rules="rule">
+      <el-select
+        v-model="inputVal"
+        :name="question.name"
+        clearable>
+        <el-option
+          v-for="input in question.values"
+          :key="input.value"
+          :value="input.value"
+          :label="input.name"/>
+      </el-select>
+    </el-form-item>
   </div>
 </template>
 

@@ -128,7 +128,7 @@ export default {
         this.$parent.$parent.activeStep = 0;
     },
     modelCreation(name) {
-      this.model[name] = null;
+      this.model[name] = undefined;
     },
     populateAnswer() {
       Object.assign(this.$parent.$parent.answer, this.model);

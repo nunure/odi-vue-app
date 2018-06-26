@@ -1,29 +1,23 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HelloWorld from "@/components/HelloWorld";
 import Questionnaire from "@/components/questionnaire/MainQuestion";
-import MainContact from "@/components/contact/MainContact";
+import SendQuestion from "@/components/questionnaire/SendQuestion";
 
 Vue.use(Router);
 
 const router = new Router({
   mode: "history",
   routes: [
-    { path: "/", redirect: "/accueil" },
-    {
-      path: "/accueil",
-      name: "HelloWorld",
-      component: HelloWorld
-    },
+    { path: "/", redirect: "/questionnaire" },
     {
       path: "/questionnaire",
       name: "Questionnaire",
       component: Questionnaire
     },
     {
-      path: "/contact",
-      name: "Contact",
-      component: MainContact
+      path: "/send_question",
+      name: "SendQuestion",
+      component: SendQuestion
     }
   ],
   linkActiveClass: "active", // active class for non-exact links.

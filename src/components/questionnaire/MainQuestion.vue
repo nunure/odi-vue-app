@@ -1,67 +1,39 @@
 <template>
-  <div>
-    <question id="qcm">
-      <question-slide
-        class="carousel"
-        v-for="question in datas"
-        :key="question.page"
-        :index="question.page">
-        <form>
-          <div
-            v-if="question.page === 0"
-            class="doctor" >
-            <informations/>
-            <vue-form-generator
-              ref="vfg"
-              :schema="question.template"
-              :model="answer.model"
-              :options="formOptions" />
-          </div>
-          <div v-else>
-            <vue-form-generator
-              ref="vfg"
-              :schema="question.template"
-              :model="answer.model"
-              :options="formOptions" />
-          </div>
-        </form>
-      </question-slide>
-    </question>
+  <div class="questionnaire">
+    <el-header>
+      <el-steps
+        :active="activeStep"
+        finish-status="success"
+        simple>
+        <el-step title="Docteur" />
+        <el-step title="Informations" />
+        <el-step title="ODI" />
+      </el-steps>
+    </el-header>
+    <el-main
+      v-for="questions in datas"
+      :key="questions.page"
+      v-show="visible(questions.page)">
+
+      <main-form :questions="questions"/>
+    </el-main>
   </div>
 </template>
 
 <script>
-import Question from "@/components/questionnaire/Question";
-import QuestionSlide from "@/components/questionnaire/QuestionSlide";
-import Informations from "@/components/questionnaire/Informations";
-import QuestionPart1 from "@/components/questionnaire/questions/QuestionPart1";
-import $ from "jquery";
-import "ion-rangeslider";
-import Pikaday from "pikaday";
-import "pikaday/css/pikaday.css";
-import VueFormGenerator from "vue-form-generator";
-import "vue-form-generator/dist/vfg.css"; // optional full css additions
-
-window.$ = $;
-window.Pikaday = Pikaday;
+import MainForm from "@/components/questionnaire/forms/MainForm";
 
 export default {
   components: {
-    "vue-form-generator": VueFormGenerator.component,
-    Question,
-    QuestionSlide,
-    Informations,
-    QuestionPart1
+    MainForm
   },
   data() {
     return {
-      answer: {},
       datas: [],
-      slides: null,
-      formOptions: {
-        validateAfterLoad: false,
-        validateAfterChanged: true
-      }
+      nbPage: 0,
+      date: "",
+      activeStep: 0,
+      answer: {}
     };
   },
   created() {
@@ -69,7 +41,7 @@ export default {
     this.$http.get("http://localhost:3000/questions").then(
       response => {
         this.datas = response.data;
-        this.slides = Object.keys(this.datas).length;
+        this.nbPage = Object.keys(this.datas).length;
       },
       response => {
         // @TODO: handle http error
@@ -79,46 +51,18 @@ export default {
     // get a new empty model for responses
     this.$http.get("http://localhost:3000/answers/createEmpty").then(
       response => {
-        this.answer = response.data;
+        this.answer = response.data.model;
       },
       response => {
         // @TODO: handle http error
         console.error(response);
       }
     );
+  },
+  methods: {
+    visible(key) {
+      return key === this.activeStep;
+    }
   }
 };
 </script>
-
-<style scoped>
-.carousel {
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-align: left;
-  padding-left: 3em;
-  padding-right: 3em;
-}
-
-br {
-  display: none;
-}
-
-button {
-  margin-bottom: 20px;
-  margin-right: 50%;
-  margin-left: 50%;
-}
-
-h5 {
-  margin-top: 30px;
-}
-
-#qcm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 800px;
-}
-</style>

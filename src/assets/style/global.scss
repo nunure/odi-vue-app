@@ -1,27 +1,87 @@
-@import 'fonts';
-@import 'variables';
-@import '../../../node_modules/bootstrap/scss/bootstrap';
-@import '../../../node_modules/vue-multiselect/dist/vue-multiselect.min.css';
-@import './ion.rangeSlider.css';
-@import './ion.rangeSlider.skinNice.css';
-
-// Some quick styling to match the multiselct with Bootstrap.
-#app .multiselect__tags {
-  border: $input-btn-border-width solid $input-border-color;
+// These are all main components that are taking all space available and displaying flex
+html,body {
+  height:100%;
+  margin: 0px;
 }
 
-#app .multiselect, .multiselect__input, .multiselect__single {
-  font-size: $font-size-base;
+.el-container {
+  min-height: 100%;
 }
 
-#app .multiselect--active .multiselect__tags {
-  color: $input-color-focus;
-  background-color: $input-bg-focus;
-  border-color: $input-border-focus;
-  outline: none;
+.el-main {
+  display: flex;
+  width: 100%;
 }
 
-.doctor .vue-form-generator .field-radios .radio-list label {
-  display: inline !important;
-  margin:5px;
+.main-body {
+  display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.questionnaire {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+// Main form style, putting some color and taking all the space available
+.el-form {
+  background-color: #f9fafc;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// Display all forms items flex
+.el-form-item {
+  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+// Styling forms label
+.el-form-item__label {
+  text-align: left !important;
+  font-weight: bold;
+}
+
+// Flex display to avoid overlow on child element
+.el-form-item__content .el-radio-group {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+// Break line to avoid overflow
+.el-radio__label {
+  white-space: pre-wrap;
+}
+
+// div containing buttons, displaying flex (again) for horizontal alignement
+div.el-form-item.buttons .el-form-item__content {
+  display: flex;
+}
+
+// Submit button align right
+button.el-button.btn-submit.el-button--primary {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+// Back button align left
+button.el-button.btn-back.el-button--button {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+// footer
+.el-footer {
+  background: #d3dce6;
+  text-align: center;
 }

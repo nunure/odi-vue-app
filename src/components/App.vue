@@ -1,11 +1,29 @@
 <template>
-  <div id="app">
-    <app-nav/>
-    <div class="container app-content">
-      <router-view/>
-    </div>
-    <app-footer/>
-  </div>
+  <el-container id="app">
+    <!--<app-nav/>-->
+
+    <el-main>
+      <el-row
+        :gutter="20"
+        type="flex"
+        class="main-body"
+        style="margin: 0px">
+        <el-col
+          :span="5"
+          class="hidden-sm-and-down"/>
+        <el-col
+          :span="18"
+          style="width: 100%"><router-view/></el-col>
+        <el-col
+          :span="5"
+          class="hidden-sm-and-down"/>
+      </el-row>
+    </el-main>
+
+    <el-footer height="100%">
+      <app-footer/>
+    </el-footer>
+  </el-container>
 
 </template>
 
@@ -22,23 +40,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-/*#app {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}*/
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.app-content {
-  padding: 60px 15px 0;
-}
-</style>

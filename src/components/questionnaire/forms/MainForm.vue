@@ -120,18 +120,21 @@ export default {
         this.$parent.$parent.activeStep++ >=
         this.$parent.$parent.nbPage - 1
       ) {
+        // this.$parent.$parent.activeStep--; // DEBUG
         // This is the end of the questionnaire
         // PUT result to the back
-        this.$http.put("http://localhost:3000/answers", this.answer).then(
-          response => {
-            this.$router.push("send_question");
-            console.log(response);
-          },
-          response => {
-            // @TODO: handle http error
-            console.error(response);
-          }
-        );
+        this.$http
+          .put("http://localhost:3000/answers", this.$parent.$parent.answer)
+          .then(
+            response => {
+              this.$router.push("send_question"); // DEBUG
+              console.log(response);
+            },
+            response => {
+              // @TODO: handle http error
+              console.error(response);
+            }
+          );
       }
     },
     onPrevious() {

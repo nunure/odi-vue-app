@@ -51,7 +51,7 @@ export default {
     // get a new empty model for responses
     this.$http.get("http://localhost:3000/answers/createEmpty").then(
       response => {
-        this.answer = response.data.model;
+        this.answer = response.data;
       },
       response => {
         // @TODO: handle http error

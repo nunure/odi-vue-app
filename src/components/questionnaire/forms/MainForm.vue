@@ -7,6 +7,9 @@
     <div v-if="questions.page === 0">
       <information/>
     </div>
+    <div v-if="questions.page >= 2">
+      <odi/>
+    </div>
     <div
       v-for="question in questions.fields"
       :key="question.name">
@@ -72,6 +75,7 @@ import RadioType from "@/components/questionnaire/forms/RadioType";
 import SelectType from "@/components/questionnaire/forms/SelectType";
 import RangeType from "@/components/questionnaire/forms/RangeType";
 import Information from "@/components/questionnaire/page/Information";
+import Odi from "@/components/questionnaire/page/Odi";
 
 export default {
   components: {
@@ -81,7 +85,8 @@ export default {
     RadioType,
     SelectType,
     RangeType,
-    Information
+    Information,
+    Odi
   },
   props: {
     questions: { type: Object, default: null }

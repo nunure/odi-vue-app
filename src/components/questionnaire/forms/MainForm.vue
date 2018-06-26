@@ -3,6 +3,10 @@
     :model="model"
     ref="model"
     label-position="Top">
+    <!-- Show information page if it's the first page -->
+    <div v-if="questions.page === 0">
+      <information/>
+    </div>
     <div
       v-for="question in questions.fields"
       :key="question.name">
@@ -67,6 +71,7 @@ import DateType from "@/components/questionnaire/forms/DateType";
 import RadioType from "@/components/questionnaire/forms/RadioType";
 import SelectType from "@/components/questionnaire/forms/SelectType";
 import RangeType from "@/components/questionnaire/forms/RangeType";
+import Information from "@/components/questionnaire/page/Information";
 
 export default {
   components: {
@@ -75,7 +80,8 @@ export default {
     DateType,
     RadioType,
     SelectType,
-    RangeType
+    RangeType,
+    Information
   },
   props: {
     questions: { type: Object, default: null }

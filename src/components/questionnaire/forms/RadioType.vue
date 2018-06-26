@@ -9,7 +9,7 @@
         v-for="input in question.values"
         :key="input.value">
         <el-radio
-        :label="input.name">{{ input.name }}</el-radio>
+        :label="input.value">{{ input.name }}</el-radio>
       </el-radio-group>
     </el-form-item>
   </div>

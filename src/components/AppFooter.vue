@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <p>
       Created by: Mathieu RETY -
       Contact information: <a href="mailto:rety.mathieu@gmail.com">

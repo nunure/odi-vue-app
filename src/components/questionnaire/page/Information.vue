@@ -10,7 +10,8 @@
     </p>
     <img
       src="@/assets/images/NFS.jpg"
-      class="img__info">
+      class="img__info"
+    >
   </div>
 </template>
 

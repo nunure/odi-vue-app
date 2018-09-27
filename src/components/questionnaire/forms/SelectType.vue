@@ -3,16 +3,19 @@
     <el-form-item
       :label="question.label"
       :prop="question.name"
-      :rules="rule">
+      :rules="rule"
+    >
       <el-select
         v-model="inputVal"
         :name="question.name"
-        clearable>
+        clearable
+      >
         <el-option
           v-for="input in question.values"
           :key="input.value"
           :value="input.value"
-          :label="input.name"/>
+          :label="input.name"
+        />
       </el-select>
     </el-form-item>
   </div>

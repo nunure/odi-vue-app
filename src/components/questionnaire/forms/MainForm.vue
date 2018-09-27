@@ -1,54 +1,62 @@
 <template>
   <el-form
-    :model="model"
     ref="model"
-    label-position="Top">
+    :model="model"
+    label-position="Top"
+  >
     <!-- Show information page if it's the first page -->
     <div v-if="questions.page === 0">
-      <information/>
+      <information />
     </div>
     <div v-if="questions.page >= 2">
-      <odi/>
+      <odi />
     </div>
     <div
       v-for="question in questions.fields"
-      :key="question.name">
+      :key="question.name"
+    >
       {{ modelCreation(question.name) }}
       <!-- radio button -->
       <div v-if="question.type === 'radio'">
         <RadioType
+          v-model="model[question.name]"
           :question="question"
-          v-model="model[question.name]" />
+        />
       </div>
       <!-- Input text type -->
       <div v-else-if="question.type === 'input_string'">
         <InputTextType
+          v-model="model[question.name]"
           :question="question"
-          v-model="model[question.name]"/>
+        />
       </div>
       <!-- Input number type -->
       <div v-else-if="question.type === 'input_number'">
         <InputNumberType
+          v-model="model[question.name]"
           :question="question"
-          v-model="model[question.name]"/>
+        />
       </div>
       <!-- Date type , max is date of the day for birth day -->
       <div v-else-if="question.type === 'date'">
         <DateType
+          v-model="model[question.name]"
           :question="question"
-          v-model="model[question.name]"/>
+        />
       </div>
       <!-- select type -->
       <div v-else-if="question.type === 'select'">
         <SelectType
+          v-model="model[question.name]"
           :question="question"
-          v-model="model[question.name]"/>
+        />
       </div>
       <!-- Range type min 0 and max 100 -->
       <div v-else-if="question.type === 'range'">
         <RangeType
+          v-model="model[question.name]"
           :question="question"
-          v-model="model[question.name]"/>
+        />
       </div>
       <div v-else>
         <p>v else: {{ question.type }}</p>
@@ -58,11 +66,13 @@
       <el-button
         type="button"
         class="btn-back"
-        @click="onPrevious()">Retour</el-button>
+        @click="onPrevious()"
+      >Retour</el-button>
       <el-button
         type="primary"
         class="btn-submit"
-        @click="submitForm('model')">Valider</el-button>
+        @click="submitForm('model')"
+      >Valider</el-button>
     </el-form-item>
   </el-form>
 </template>

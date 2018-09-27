@@ -33,12 +33,12 @@
 
 
 <script>
-import AppNav from "./AppNav";
+//import AppNav from "./AppNav";
 import AppFooter from "./AppFooter";
 
 export default {
   name: "App",
-  components: { AppNav, AppFooter },
+  components: { /*AppNav,*/ AppFooter },
   data() {
     return {};
   }

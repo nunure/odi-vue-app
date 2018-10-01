@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Questionnaire from "@/components/questionnaire/MainQuestion";
-import SendQuestion from "@/components/questionnaire/SendQuestion";
+import Questionnaire from "@/views/MainQuestion";
+import SendQuestion from "@/views/SendQuestion";
 
 Vue.use(Router);
 

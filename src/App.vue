@@ -33,8 +33,8 @@
 
 
 <script>
-//import AppNav from "./AppNav";
-import AppFooter from "./AppFooter";
+//import AppNav from "@/components/AppNav";
+import AppFooter from "@/components/AppFooter";
 
 export default {
   name: "App",

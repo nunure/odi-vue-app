@@ -3,13 +3,11 @@
     <el-form-item
       :label="question.label"
       :prop="question.name"
-      :rules="rule"
-    >
+      :rules="rule">
       <el-date-picker
         v-model="inputVal"
         type="date"
-        default-value="2000-01-01"
-      />
+        default-value="2000-01-01" />
     </el-form-item>
   </div>
 </template>

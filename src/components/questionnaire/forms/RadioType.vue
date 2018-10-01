@@ -3,16 +3,13 @@
     <el-form-item
       :label="question.label"
       :prop="question.name"
-      :rules="rule"
-    >
+      :rules="rule">
       <el-radio-group
         v-for="input in question.values"
         :key="input.value"
-        v-model="inputVal"
-      >
+        v-model="inputVal">
         <el-radio
-          :label="input.value"
-        >{{ input.name }}</el-radio>
+          :label="input.value">{{ input.name }}</el-radio>
       </el-radio-group>
     </el-form-item>
   </div>

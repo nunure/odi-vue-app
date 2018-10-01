@@ -2,8 +2,7 @@
   <el-form
     ref="model"
     :model="model"
-    label-position="Top"
-  >
+    label-position="Top">
     <!-- Show information page if it's the first page -->
     <div v-if="questions.page === 0">
       <information />
@@ -13,50 +12,43 @@
     </div>
     <div
       v-for="question in questions.fields"
-      :key="question.name"
-    >
+      :key="question.name">
       {{ modelCreation(question.name) }}
       <!-- radio button -->
       <div v-if="question.type === 'radio'">
         <RadioType
           v-model="model[question.name]"
-          :question="question"
-        />
+          :question="question" />
       </div>
       <!-- Input text type -->
       <div v-else-if="question.type === 'input_string'">
         <InputTextType
           v-model="model[question.name]"
-          :question="question"
-        />
+          :question="question" />
       </div>
       <!-- Input number type -->
       <div v-else-if="question.type === 'input_number'">
         <InputNumberType
           v-model="model[question.name]"
-          :question="question"
-        />
+          :question="question" />
       </div>
       <!-- Date type , max is date of the day for birth day -->
       <div v-else-if="question.type === 'date'">
         <DateType
           v-model="model[question.name]"
-          :question="question"
-        />
+          :question="question" />
       </div>
       <!-- select type -->
       <div v-else-if="question.type === 'select'">
         <SelectType
           v-model="model[question.name]"
-          :question="question"
-        />
+          :question="question" />
       </div>
       <!-- Range type min 0 and max 100 -->
       <div v-else-if="question.type === 'range'">
         <RangeType
           v-model="model[question.name]"
-          :question="question"
-        />
+          :question="question" />
       </div>
       <div v-else>
         <p>v else: {{ question.type }}</p>
@@ -66,13 +58,11 @@
       <el-button
         type="button"
         class="btn-back"
-        @click="onPrevious()"
-      >Retour</el-button>
+        @click="onPrevious()">Retour</el-button>
       <el-button
         type="primary"
         class="btn-submit"
-        @click="submitForm('model')"
-      >Valider</el-button>
+        @click="submitForm('model')">Valider</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -144,7 +134,7 @@ export default {
               // @TODO: handle http error
               console.error(response);
             }
-          );
+          ); //eslint-disable-line
       }
     },
     onPrevious() {

@@ -3,8 +3,7 @@
     <h1> Questionnaire envoyé :) </h1>
     <button
       type="button"
-      @click="startQuestionnaire()"
-    >Nouveau questionnaire</button>
+      @click="startQuestionnaire()">Nouveau questionnaire</button>
   </div>
 </template>
 

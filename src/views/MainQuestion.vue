@@ -4,8 +4,7 @@
       <el-steps
         :active="activeStep"
         finish-status="success"
-        simple
-      >
+        simple>
         <el-step title="Docteur" />
         <el-step title="Informations" />
         <el-step title="ODI" />
@@ -14,8 +13,7 @@
     <el-main
       v-for="questions in datas"
       v-show="visible(questions.page)"
-      :key="questions.page"
-    >
+      :key="questions.page">
 
       <main-form :questions="questions" />
     </el-main>

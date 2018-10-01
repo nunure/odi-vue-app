@@ -3,14 +3,12 @@
     <el-form-item
       :label="question.label"
       :prop="question.name"
-      :rules="rule"
-    >
+      :rules="rule">
       <el-input
         v-model="inputVal"
         :placeholder="question.placeholder"
         :name="question.name"
-        clearable
-      />
+        clearable />
     </el-form-item>
   </div>
 </template>

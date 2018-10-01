@@ -8,25 +8,21 @@
         data-target="#navbarCollapse"
         aria-controls="navbarCollapse"
         aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" />
       </button>
       <router-link
         tag="a"
-        to="/"
-      >
+        to="/">
         <a class="navbar-brand nav-link">
           <img
             src="../assets/images/logo.png"
-            class="ev-appnav__logo"
-          >
+            class="ev-appnav__logo">
         </a>
       </router-link>
       <div
         id="navbarCollapse"
-        class="collapse navbar-collapse"
-      >
+        class="collapse navbar-collapse">
         <div class="navbar-nav">
           <tab name="Accueil" />
           <tab name="Questionnaire" />

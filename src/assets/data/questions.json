@@ -30,6 +30,7 @@
   },
   {
     "page": 1,
+    "title": "Informations",
     "fields": [
       {
         "type": "input_string",
@@ -111,15 +112,323 @@
         "required": true
       },
       {
-        "type": "range",
-        "label": "douleur",
-        "name": "rank",
+        "type": "select",
+        "label": "Avez-vous déjà été opéré(e) ?",
+        "name": "operateBefore",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "date",
+        "label": "Quand ? (Opération la plus récente)",
+        "name": "operation_date",
+        "required": false,
+        "visibleIf":
+        {
+          "name": "operateBefore",
+          "value": true
+        }
+      },
+      {
+        "type": "input_string",
+        "label": "Avez-vous des maladies que vous soignez au long cours ?",
+        "name": "long_term_illnesses",
+        "placeholder": "rhume",
+        "required": true
+      },
+      {
+        "type": "input_string",
+        "label": "Avez-vous des allergies ?",
+        "name": "allergies",
+        "placeholder": "Tension, diabète...",
+        "required": true
+      },
+      {
+        "type": "input_string",
+        "label": "Prenez-vous des médicaments de manière habituelle ?",
+        "name": "medication",
+        "placeholder": "Cyanure",
+        "required": true
+      },
+      {
+        "type": "input_string",
+        "label": "Pour quelle raison consultez-vous aujourd'hui ?",
+        "name": "consult",
+        "placeholder": "Scoliose",
         "required": true
       }
     ]
   },
   {
     "page": 2,
+    "title": "Vos douleurs",
+    "fields": [
+      {
+        "type": "select",
+        "label": "Avez-vous des douleurs dans les jambes ?",
+        "name": "legsPain",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Avez-vous des douleurs dans le dos ?",
+        "name": "backPain",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Vos douleurs vous réveillent-elles dans la nuit ?",
+        "name": "wakeUpPain",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Vos douleurs augmentent-elles lorsque vous bougez ?",
+        "name": "moovingPain",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Avez-vous une position qui vous soulage ?",
+        "name": "painFree",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "input_string",
+        "label": "La ou Lesquelles ?",
+        "name": "positionPainFree",
+        "required": false,
+        "visibleIf":
+        {
+          "name": "painFree",
+          "value": true
+        }
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "title": "Votre démarche",
+    "fields": [
+      {
+        "type": "select",
+        "label": "Etes-vous gêné(e) pour marcher ?",
+        "name": "embarrassedWalking",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "input_number",
+        "label": "Quelle est votre plus longue distance de marche sans pause (mètres)",
+        "name": "distance",
+        "placeholder": "100",
+        "required": true
+      },
+      {
+        "type": "select",
+        "label": "Utilisez-vous une canne ?",
+        "name": "cane",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "title": "Autres",
+    "fields": [
+      {
+        "type": "select",
+        "label": "Avez-vous des problèmes pour aller à la selle ou pour uriner ?",
+        "name": "toiletIssue",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "title": "Depuis le début de vos symptômes...",
+    "fields": [
+      {
+        "type": "input_string",
+        "label": "Quel traitement contre la douleur avez-vous ?",
+        "name": "treatment",
+        "placeholder": "Marijane",
+        "required": true
+      },
+      {
+        "type": "select",
+        "label": "Avez-vous fait de la rééducation ?",
+        "name": "reeducation",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Avez-vous eu des infiltrations ?",
+        "name": "infiltration",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Avez-vous porté un corset ?",
+        "name": "corset",
+        "required": true,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Avez-vous trouvé une amélioration ?",
+        "name": "improvment",
+        "required": false,
+        "values": [
+          {
+            "name": "Oui",
+            "value": true
+          },
+          {
+            "name": "Non",
+            "value": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "title": "Expression de votre douleur",
+    "fields": [
+      {
+        "type": "range",
+        "label": "Concernant vos douleurs lombaires habituelles (en bas du dos)",
+        "name": "rangeLumbarPain",
+        "required": true
+      },
+      {
+        "type": "range",
+        "label": "Concernant vos douleurs lqui irradient vers les jambes",
+        "name": "rangeLegPain",
+        "required": true
+      }
+    ]
+  },
+  {
+    "page": 7,
     "fields": [
       {
         "type": "radio",
@@ -156,7 +465,7 @@
     ]
   },
   {
-    "page": 3,
+    "page": 8,
     "fields": [
       {
         "type": "radio",
@@ -199,7 +508,7 @@
     ]
   },
   {
-    "page": 4,
+    "page": 9,
     "fields": [
       {
         "type": "radio",
@@ -240,7 +549,7 @@
     ]
   },
   {
-    "page": 5,
+    "page": 10,
     "fields": [
       {
         "type": "radio",
@@ -279,7 +588,7 @@
     ]
   },
   {
-    "page": 6,
+    "page": 11,
     "fields": [
       {
         "type": "radio",
@@ -321,7 +630,7 @@
     ]
   },
   {
-    "page": 7,
+    "page": 12,
     "fields": [
       {
         "type": "radio",
@@ -363,7 +672,7 @@
     ]
   },
   {
-    "page": 8,
+    "page": 13,
     "fields": [
       {
         "type": "radio",
@@ -400,7 +709,7 @@
     ]
   },
   {
-    "page": 9,
+    "page": 14,
     "fields": [
       {
         "type": "radio",
@@ -442,7 +751,7 @@
     ]
   },
   {
-    "page": 10,
+    "page": 15,
     "fields": [
       {
         "type": "radio",
@@ -484,7 +793,7 @@
     ]
   },
   {
-    "page": 11,
+    "page": 16,
     "fields": [
       {
         "type": "radio",

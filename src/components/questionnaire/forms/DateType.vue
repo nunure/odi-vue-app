@@ -16,7 +16,7 @@
 export default {
   props: {
     question: { type: Object, default: null },
-    value: { type: String, default: undefined }
+    value: { type: Date, default: undefined }
   },
   data() {
     return {

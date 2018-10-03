@@ -1,7 +1,8 @@
 <template>
   <el-form
-    ref="model"
-    :model="model"
+    ref="answer_model"
+    :model="answer_model"
+    :rules="rule"
     label-position="Top">
     <!-- Show information page if it's the first page -->
     <div v-if="questions.page === 0">
@@ -13,41 +14,40 @@
     <div
       v-for="question in questions.fields"
       :key="question.name">
-      {{ modelCreation(question.name) }}
       <!-- radio button -->
       <div v-if="question.type === 'radio'">
         <RadioType
-          v-model="model[question.name]"
+          v-model="answer_model[question.name]"
           :question="question" />
       </div>
       <!-- Input text type -->
       <div v-else-if="question.type === 'input_string'">
         <InputTextType
-          v-model="model[question.name]"
+          v-model="answer_model[question.name]"
           :question="question" />
       </div>
       <!-- Input number type -->
       <div v-else-if="question.type === 'input_number'">
         <InputNumberType
-          v-model="model[question.name]"
+          v-model="answer_model[question.name]"
           :question="question" />
       </div>
       <!-- Date type , max is date of the day for birth day -->
       <div v-else-if="question.type === 'date'">
         <DateType
-          v-model="model[question.name]"
+          v-model="answer_model[question.name]"
           :question="question" />
       </div>
       <!-- select type -->
       <div v-else-if="question.type === 'select'">
         <SelectType
-          v-model="model[question.name]"
+          v-model="answer_model[question.name]"
           :question="question" />
       </div>
       <!-- Range type min 0 and max 100 -->
       <div v-else-if="question.type === 'range'">
         <RangeType
-          v-model="model[question.name]"
+          v-model="answer_model[question.name]"
           :question="question" />
       </div>
       <div v-else>
@@ -62,7 +62,7 @@
       <el-button
         type="primary"
         class="btn-submit"
-        @click="submitForm('model')">Valider</el-button>
+        @click="submitForm('answer_model')">Valider</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -93,14 +93,8 @@ export default {
   },
   data() {
     return {
-      rule: [
-        {
-          required: true,
-          message: "Please input Activity name",
-          trigger: "blur"
-        }
-      ],
-      model: {}
+      rule: {},
+      answer_model: {}
     };
   },
   methods: {
@@ -141,12 +135,9 @@ export default {
       if (this.$parent.$parent.activeStep-- <= 0)
         this.$parent.$parent.activeStep = 0;
     },
-    modelCreation(name) {
-      this.model[name] = undefined;
-    },
     populateAnswer() {
-      Object.assign(this.$parent.$parent.answer, this.model);
-    }
+      Object.assign(this.$parent.$parent.answer, this.answer_model);
+    },
   }
 };
 </script>

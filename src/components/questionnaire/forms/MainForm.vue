@@ -8,8 +8,11 @@
     <div v-if="questions.page === 0">
       <information />
     </div>
-    <div v-if="questions.page >= 2">
+    <div v-if="questions.page >= 7">
       <odi />
+    </div>
+    <div v-else>
+      <h1>{{questions.title}}</h1>
     </div>
     <div
       v-for="question in questions.fields"
@@ -137,7 +140,7 @@ export default {
     },
     populateAnswer() {
       Object.assign(this.$parent.$parent.answer, this.answer_model);
-    },
+    }
   }
 };
 </script>

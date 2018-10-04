@@ -31,7 +31,7 @@ export default {
         {
           required: true,
           message: "Veuillez sélectionner l'une de ces options",
-          trigger: "blur"
+          trigger: "change"
         }
       ],
       inputVal: this.value

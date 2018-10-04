@@ -25,7 +25,7 @@ export default {
         {
           required: true,
           message: "Veuillez renseigner ce champ",
-          trigger: "blur"
+          trigger: "change"
         }
       ],
       inputVal: this.value

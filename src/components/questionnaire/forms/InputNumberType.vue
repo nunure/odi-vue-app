@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-form-item
+      v-show="visible"
       :label="question.label"
       :prop="question.name"
       :rules="rule">
@@ -18,19 +19,24 @@
 export default {
   props: {
     question: { type: Object, default: null },
-    value: { type: Number, default: undefined }
+    value: { type: Number, default: undefined },
+    visible: { type: Boolean, default: true }
   },
   data() {
     return {
-      rule: [
+      inputVal: this.value
+    };
+  },
+  computed: {
+    rule() {
+      return [
         {
-          required: true,
+          required: this.visible && this.question.required,
           message: "Veuillez renseigner ce champ",
           trigger: "change"
         }
-      ],
-      inputVal: this.value
-    };
+      ];
+    }
   },
   watch: {
     inputVal(val) {

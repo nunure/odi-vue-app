@@ -12,46 +12,53 @@
       <odi />
     </div>
     <div v-else>
-      <h1>{{questions.title}}</h1>
+      <h1>{{ questions.title }}</h1>
     </div>
     <div
       v-for="question in questions.fields"
       :key="question.name">
+      {{ isVisible(question) }}
       <!-- radio button -->
       <div v-if="question.type === 'radio'">
         <RadioType
           v-model="answer_model[question.name]"
-          :question="question" />
+          :question="question"
+          :visible = "question.visible" />
       </div>
       <!-- Input text type -->
       <div v-else-if="question.type === 'input_string'">
         <InputTextType
           v-model="answer_model[question.name]"
-          :question="question" />
+          :question="question"
+          :visible = "question.visible" />
       </div>
       <!-- Input number type -->
       <div v-else-if="question.type === 'input_number'">
         <InputNumberType
           v-model="answer_model[question.name]"
-          :question="question" />
+          :question="question"
+          :visible = "question.visible" />
       </div>
       <!-- Date type , max is date of the day for birth day -->
       <div v-else-if="question.type === 'date'">
         <DateType
           v-model="answer_model[question.name]"
-          :question="question" />
+          :question="question"
+          :visible = "question.visible" />
       </div>
       <!-- select type -->
       <div v-else-if="question.type === 'select'">
         <SelectType
           v-model="answer_model[question.name]"
-          :question="question" />
+          :question="question"
+          :visible = "question.visible" />
       </div>
       <!-- Range type min 0 and max 100 -->
       <div v-else-if="question.type === 'range'">
         <RangeType
           v-model="answer_model[question.name]"
-          :question="question" />
+          :question="question"
+          :visible = "question.visible" />
       </div>
       <div v-else>
         <p>v else: {{ question.type }}</p>
@@ -140,6 +147,16 @@ export default {
     },
     populateAnswer() {
       Object.assign(this.$parent.$parent.answer, this.answer_model);
+    },
+    isVisible(question) {
+      // If there is not visibleIf property we show the input
+      if (question.visibleIf === undefined || question.visibleIf.length === 0) {
+        question.visible = true;
+      } else {
+        question.visible =
+          this.answer_model[question.visibleIf[0].name] ===
+          question.visibleIf[0].value;
+      }
     }
   }
 };

@@ -131,7 +131,7 @@
         "type": "date",
         "label": "Quand ? (Opération la plus récente)",
         "name": "operation_date",
-        "required": false,
+        "required": true,
         "visibleIf":
         {
           "name": "operateBefore",
@@ -256,7 +256,7 @@
         "type": "input_string",
         "label": "La ou Lesquelles ?",
         "name": "positionPainFree",
-        "required": false,
+        "required": true,
         "visibleIf":
         {
           "name": "painFree",

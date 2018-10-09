@@ -2,7 +2,7 @@
   <div>
     <el-form-item
       v-show="visible"
-      :label="question.label"
+      :label="question.legend"
       :prop="question.name"
       :rules="rule">
       <el-radio-group
@@ -10,7 +10,7 @@
         :key="input.value"
         v-model="inputVal">
         <el-radio
-          :label="input.value">{{ input.name }}</el-radio>
+          :label="input.value">{{ input.label }}</el-radio>
       </el-radio-group>
     </el-form-item>
   </div>

@@ -2,7 +2,7 @@
   <div>
     <el-form-item
       v-show="visible"
-      :label="question.label"
+      :label="question.legend"
       :prop="question.name"
       :rules="rule">
       <el-select
@@ -13,7 +13,7 @@
           v-for="input in question.values"
           :key="input.value"
           :value="input.value"
-          :label="input.name" />
+          :label="input.label" />
       </el-select>
     </el-form-item>
   </div>

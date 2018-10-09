@@ -2,7 +2,7 @@
   <div>
     <el-form-item
       v-show="visible"
-      :label="question.label"
+      :label="question.legend"
       :prop="question.name"
       :rules="rule">
       <el-input

@@ -4,24 +4,24 @@
     "fields": [
       {
         "type": "radio",
-        "label": "Quel est votre docteur ?",
+        "legend": "Quel est votre docteur ?",
         "name": "doctor",
         "required": true,
         "values": [
           {
-            "name": "Dr P. CHATELLIER",
+            "label": "Dr P. CHATELLIER",
             "value": "Dr P. CHATELLIER"
           },
           {
-            "name": "Dr D. BOUAKA",
+            "label": "Dr D. BOUAKA",
             "value": "Dr D. BOUAKA"
           },
           {
-            "name": "Dr J. LEBHAR",
+            "label": "Dr J. LEBHAR",
             "value": "Dr J. LEBHAR"
           },
           {
-            "name": "Dr P. KRIEGEL",
+            "label": "Dr P. KRIEGEL",
             "value": "Dr P. KRIEGEL"
           }
         ]
@@ -34,102 +34,102 @@
     "fields": [
       {
         "type": "input_string",
-        "label": "Nom",
+        "legend": "Nom",
         "name": "first_name",
         "placeholder": "LE GARREC",
         "required": true
       },
       {
         "type": "input_string",
-        "label": "Prénom",
+        "legend": "Prénom",
         "name": "last_name",
         "placeholder": "Erwan",
         "required": true
       },
       {
         "type": "date",
-        "label": "Date de naissance",
+        "legend": "Date de naissance",
         "name": "birth_date",
         "required": true
       },
       {
         "type": "input_string",
-        "label": "Nom de votre médecin traitant",
+        "legend": "Nom de votre médecin traitant",
         "name": "medical_consultant",
         "placeholder": "Dr House",
         "required": true
       },
       {
         "type": "select",
-        "label": "Profession",
+        "legend": "Profession",
         "name": "job",
         "required": true,
         "values": [
           {
-            "name": "Agriculteurs exploitants",
+            "label": "Agriculteurs exploitants",
             "value": "Agriculteurs exploitants"
           },
           {
-            "name": "Artisans, commerçants, chefs d'entreprise",
+            "label": "Artisans, commerçants, chefs d'entreprise",
             "value": "Artisans, commerçants, chefs d'entreprise"
           },
           {
-            "name": "Cadres et professions intellectuelles supérieures",
+            "label": "Cadres et professions intellectuelles supérieures",
             "value": "Cadres et professions intellectuelles supérieures"
           },
           {
-            "name": "Professions intermédiaires",
+            "label": "Professions intermédiaires",
             "value": "Professions intermédiaires"
           },
-          { "name": "Employés", "value": "Employés" },
-          { "name": "Ouvriers", "value": "Ouvriers" },
-          { "name": "Retraités", "value": "Retraités" },
+          { "label": "Employés", "value": "Employés" },
+          { "label": "Ouvriers", "value": "Ouvriers" },
+          { "label": "Retraités", "value": "Retraités" },
           {
-            "name": "Autres personnes sans activité professionnelle",
+            "label": "Autres personnes sans activité professionnelle",
             "value": "Autres personnes sans activité professionnelle"
           }
         ]
       },
       {
         "type": "input_string",
-        "label": "loisirs",
+        "legend": "loisirs",
         "name": "activities",
         "placeholder": "Echecs, natation",
         "required": true
       },
       {
         "type": "input_number",
-        "label": "Taille",
+        "legend": "Taille",
         "name": "size",
         "placeholder": "180",
         "required": true
       },
       {
         "type": "input_number",
-        "label": "Poids",
+        "legend": "Poids",
         "name": "weight",
         "placeholder": "80",
         "required": true
       },
       {
         "type": "select",
-        "label": "Avez-vous déjà été opéré(e) ?",
+        "legend": "Avez-vous déjà été opéré(e) ?",
         "name": "operateBefore",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "date",
-        "label": "Quand ? (Opération la plus récente)",
+        "legend": "Quand ? (Opération la plus récente)",
         "name": "operation_date",
         "required": true,
         "visibleIf":
@@ -140,28 +140,28 @@
       },
       {
         "type": "input_string",
-        "label": "Avez-vous des maladies que vous soignez au long cours ?",
+        "legend": "Avez-vous des maladies que vous soignez au long cours ?",
         "name": "long_term_illnesses",
         "placeholder": "rhume",
         "required": true
       },
       {
         "type": "input_string",
-        "label": "Avez-vous des allergies ?",
+        "legend": "Avez-vous des allergies ?",
         "name": "allergies",
         "placeholder": "Tension, diabète...",
         "required": true
       },
       {
         "type": "input_string",
-        "label": "Prenez-vous des médicaments de manière habituelle ?",
+        "legend": "Prenez-vous des médicaments de manière habituelle ?",
         "name": "medication",
         "placeholder": "Cyanure",
         "required": true
       },
       {
         "type": "input_string",
-        "label": "Pour quelle raison consultez-vous aujourd'hui ?",
+        "legend": "Pour quelle raison consultez-vous aujourd'hui ?",
         "name": "consult",
         "placeholder": "Scoliose",
         "required": true
@@ -174,87 +174,87 @@
     "fields": [
       {
         "type": "select",
-        "label": "Avez-vous des douleurs dans les jambes ?",
+        "legend": "Avez-vous des douleurs dans les jambes ?",
         "name": "legsPain",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Avez-vous des douleurs dans le dos ?",
+        "legend": "Avez-vous des douleurs dans le dos ?",
         "name": "backPain",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Vos douleurs vous réveillent-elles dans la nuit ?",
+        "legend": "Vos douleurs vous réveillent-elles dans la nuit ?",
         "name": "wakeUpPain",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Vos douleurs augmentent-elles lorsque vous bougez ?",
+        "legend": "Vos douleurs augmentent-elles lorsque vous bougez ?",
         "name": "moovingPain",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Avez-vous une position qui vous soulage ?",
+        "legend": "Avez-vous une position qui vous soulage ?",
         "name": "painFree",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "input_string",
-        "label": "La ou Lesquelles ?",
+        "legend": "La ou Lesquelles ?",
         "name": "positionPainFree",
         "required": true,
         "visibleIf":
@@ -271,39 +271,39 @@
     "fields": [
       {
         "type": "select",
-        "label": "Etes-vous gêné(e) pour marcher ?",
+        "legend": "Etes-vous gêné(e) pour marcher ?",
         "name": "embarrassedWalking",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "input_number",
-        "label": "Quelle est votre plus longue distance de marche sans pause (mètres)",
+        "legend": "Quelle est votre plus longue distance de marche sans pause (mètres)",
         "name": "distance",
         "placeholder": "100",
         "required": true
       },
       {
         "type": "select",
-        "label": "Utilisez-vous une canne ?",
+        "legend": "Utilisez-vous une canne ?",
         "name": "cane",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
@@ -316,16 +316,16 @@
     "fields": [
       {
         "type": "select",
-        "label": "Avez-vous des problèmes pour aller à la selle ou pour uriner ?",
+        "legend": "Avez-vous des problèmes pour aller à la selle ou pour uriner ?",
         "name": "toiletIssue",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
@@ -338,71 +338,71 @@
     "fields": [
       {
         "type": "input_string",
-        "label": "Quel traitement contre la douleur avez-vous ?",
+        "legend": "Quel traitement contre la douleur avez-vous ?",
         "name": "treatment",
         "placeholder": "Marijane",
         "required": true
       },
       {
         "type": "select",
-        "label": "Avez-vous fait de la rééducation ?",
+        "legend": "Avez-vous fait de la rééducation ?",
         "name": "reeducation",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Avez-vous eu des infiltrations ?",
+        "legend": "Avez-vous eu des infiltrations ?",
         "name": "infiltration",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Avez-vous porté un corset ?",
+        "legend": "Avez-vous porté un corset ?",
         "name": "corset",
         "required": true,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
       },
       {
         "type": "select",
-        "label": "Avez-vous trouvé une amélioration ?",
+        "legend": "Avez-vous trouvé une amélioration ?",
         "name": "improvment",
         "required": false,
         "values": [
           {
-            "name": "Oui",
+            "label": "Oui",
             "value": true
           },
           {
-            "name": "Non",
+            "label": "Non",
             "value": false
           }
         ]
@@ -415,13 +415,13 @@
     "fields": [
       {
         "type": "range",
-        "label": "Concernant vos douleurs lombaires habituelles (en bas du dos)",
+        "legend": "Concernant vos douleurs lombaires habituelles (en bas du dos)",
         "name": "rangeLumbarPain",
         "required": true
       },
       {
         "type": "range",
-        "label": "Concernant vos douleurs lqui irradient vers les jambes",
+        "legend": "Concernant vos douleurs lqui irradient vers les jambes",
         "name": "rangeLegPain",
         "required": true
       }
@@ -432,32 +432,32 @@
     "fields": [
       {
         "type": "radio",
-        "label": "1: Intensité de la douleur",
+        "legend": "1: Intensité de la douleur",
         "name": "odiQuestion1",
         "required": true,
         "values": [
           {
-            "name": "En ce moment, je ne ressens aucune douleur.",
+            "label": "En ce moment, je ne ressens aucune douleur.",
             "value": 0
           },
           {
-            "name": "En ce moment, j'ai des douleurs très légères.",
+            "label": "En ce moment, j'ai des douleurs très légères.",
             "value": 1
           },
           {
-            "name": "En ce moment, j'ai des douleurs modérées.",
+            "label": "En ce moment, j'ai des douleurs modérées.",
             "value": 2
           },
           {
-            "name": "En ce moment, j'ai des douleurs assez intenses.",
+            "label": "En ce moment, j'ai des douleurs assez intenses.",
             "value": 3
           },
           {
-            "name": "En ce moment, j'ai des douleurs très intenses.",
+            "label": "En ce moment, j'ai des douleurs très intenses.",
             "value": 4
           },
           {
-            "name": "En ce moment, sont les pires que l'on puisse imaginer.",
+            "label": "En ce moment, sont les pires que l'on puisse imaginer.",
             "value": 5
           }
         ]
@@ -469,37 +469,37 @@
     "fields": [
       {
         "type": "radio",
-        "label": "2: Soins personnels (se laver, s'habiller, etc.)",
+        "legend": "2: Soins personnels (se laver, s'habiller, etc.)",
         "name": "odiQuestion2",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Je peux effectuer normalement mes soins personnels sans douleur supplémentaire.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Je peux effectuer normalement mes soins personnels, mais c'est très douloureux.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "Je dois effectuer mes soins personnels avec précaution et lenteur, et je ressens des douleurs.",
             "value": 2
           },
           {
-            "name":
+            "label":
               "J'ai besoin d'aide pour les soins personnels, mais j'arrive encore à effectuer la plus grande partie de ceux-ci seul(e).",
             "value": 3
           },
           {
-            "name":
+            "label":
               "J'ai besoin d'aide tous les jours pour la plupart des mes soins personnels.",
             "value": 4
           },
           {
-            "name":
+            "label":
               "Je ne peux plus m'habiller, je me lave avec difficulté et je reste au lit.",
             "value": 5
           }
@@ -512,36 +512,36 @@
     "fields": [
       {
         "type": "radio",
-        "label": "3: Soulever des charges",
+        "legend": "3: Soulever des charges",
         "name": "odiQuestion3",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Je peux soulever des charges lourdes sans augmentation des douleurs.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Je peux soulever des charges lourdes, mais cela occasionne une augmentation des douleurs.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de soulever de lourdes charges depuis le sol, mais cela reste possible si elles sont sur un approprié (par ex : sur une table).",
             "value": 2
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de soulever des charges lourdes, mais je peux soulever de légères à modérées si elles sont sur un approprié.",
             "value": 3
           },
           {
-            "name": "Je ne peux soulever que de très légères charges.",
+            "label": "Je ne peux soulever que de très légères charges.",
             "value": 4
           },
           {
-            "name": "Je ne peux rien soulever ni porter du tout.",
+            "label": "Je ne peux rien soulever ni porter du tout.",
             "value": 5
           }
         ]
@@ -553,33 +553,33 @@
     "fields": [
       {
         "type": "radio",
-        "label": "4: Marche à pied",
+        "legend": "4: Marche à pied",
         "name": "odiQuestion4",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Les douleurs ne m'empêchent pas de marcher, quelle que soit la distance.",
             "value": 0
           },
           {
-            "name": "Les douleurs m'empêchent de marcher au-delà de 1 km.",
+            "label": "Les douleurs m'empêchent de marcher au-delà de 1 km.",
             "value": 1
           },
           {
-            "name": "Les douleurs m'empêchent de marcher au-delà de 250m.",
+            "label": "Les douleurs m'empêchent de marcher au-delà de 250m.",
             "value": 2
           },
           {
-            "name": "Les douleurs m'empêchent de marcher au-delà de 100m.",
+            "label": "Les douleurs m'empêchent de marcher au-delà de 100m.",
             "value": 3
           },
           {
-            "name": "Je ne peux marcher qu'avec une canne ou des béquilles.",
+            "label": "Je ne peux marcher qu'avec une canne ou des béquilles.",
             "value": 4
           },
           {
-            "name":
+            "label":
               "Je reste au lit la plupart du temps et dois me trainer jusqu'aux toilettes.",
             "value": 5
           }
@@ -592,37 +592,37 @@
     "fields": [
       {
         "type": "radio",
-        "label": "5: Position assise",
+        "legend": "5: Position assise",
         "name": "odiQuestion5",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Je peux rester assis(e) aussi longtemps que je le désire sur n'importe quel siège.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Je peux rester assis(e) aussi longtemps que je le désire sur mon siège favori.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de rester assis(e) plus de 1 heure.",
             "value": 2
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de rester assis(e) plus de 1/2 heure.",
             "value": 3
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de rester assis(e) plus de 10 minutes.",
             "value": 4
           },
           {
-            "name": "Les douleurs m'empêchent toute position assise.",
+            "label": "Les douleurs m'empêchent toute position assise.",
             "value": 5
           }
         ]
@@ -634,37 +634,37 @@
     "fields": [
       {
         "type": "radio",
-        "label": "6: Position debout",
+        "legend": "6: Position debout",
         "name": "odiQuestion6",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Je peux rester debout aussi longtemps que je le désire sans douleur supplémentaire.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Je peux rester debout aussi longtemps que je le désire, mais cela occasionne des douleurs supplémentaires.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de rester debout plus de 1 heure.",
             "value": 2
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de rester debout plus de 1/2 heure.",
             "value": 3
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent de rester debout plus de 10 minutes.",
             "value": 4
           },
           {
-            "name": "Les douleurs m'empêchent de me tenir debout.",
+            "label": "Les douleurs m'empêchent de me tenir debout.",
             "value": 5
           }
         ]
@@ -676,32 +676,32 @@
     "fields": [
       {
         "type": "radio",
-        "label": "7: Sommeil",
+        "legend": "7: Sommeil",
         "name": "odiQuestion7",
         "required": true,
         "values": [
           {
-            "name": "Mon sommeil n'est jamais perturbé par la douleur.",
+            "label": "Mon sommeil n'est jamais perturbé par la douleur.",
             "value": 0
           },
           {
-            "name": "Mon sommeil est parfois perturbé par la douleur.",
+            "label": "Mon sommeil est parfois perturbé par la douleur.",
             "value": 1
           },
           {
-            "name": "À cause de la douleur, je dors moins de 6 heures.",
+            "label": "À cause de la douleur, je dors moins de 6 heures.",
             "value": 2
           },
           {
-            "name": "À cause de la douleur, je dors moins de 4 heures.",
+            "label": "À cause de la douleur, je dors moins de 4 heures.",
             "value": 3
           },
           {
-            "name": "À cause de la douleur, je dors moins de 2 heures.",
+            "label": "À cause de la douleur, je dors moins de 2 heures.",
             "value": 4
           },
           {
-            "name": "La douleur m'empêche complètement de dormir.",
+            "label": "La douleur m'empêche complètement de dormir.",
             "value": 5
           }
         ]
@@ -713,37 +713,37 @@
     "fields": [
       {
         "type": "radio",
-        "label": "8: Vie sexuelle",
+        "legend": "8: Vie sexuelle",
         "name": "odiQuestion8",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Ma vie sexuelle est normale et n'occasionne pas de douleurs supplémentaires.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Ma vie sexuelle est normale, mais occasionne parfois quelques douleurs supplémentaires.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "Ma vie sexuelle est presque normale, mais très douloureuse.",
             "value": 2
           },
           {
-            "name":
+            "label":
               "Ma vie sexuelle est fortement réduite à cause des douleurs.",
             "value": 3
           },
           {
-            "name":
+            "label":
               "Ma vie sexuelle est presque inexistante à cause des douleurs.",
             "value": 4
           },
           {
-            "name": "Les douleurs m'empêchent toute vie sexuelle.",
+            "label": "Les douleurs m'empêchent toute vie sexuelle.",
             "value": 5
           }
         ]
@@ -755,37 +755,37 @@
     "fields": [
       {
         "type": "radio",
-        "label": "9: Vie sociale (sport, cinéma, danse, souper entre amis)",
+        "legend": "9: Vie sociale (sport, cinéma, danse, souper entre amis)",
         "name": "odiQuestion9",
         "required": true,
         "values": [
           {
-            "name":
+            "label":
               "Ma vie sociale est normale et n'a pas d'effet sur la douleur.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Ma vie sociale est normale, mais elle augmente la douleur.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "La douleur n'a pas d'effet sur ma vie sociale, sauf pour des activités demandant plus d'énergie (sport par exemple).",
             "value": 2
           },
           {
-            "name":
+            "label":
               "La douleur limite ma vie sociale et je ne sors plus aussi souvent.",
             "value": 3
           },
           {
-            "name":
+            "label":
               "La douleur a limité ma vie sociale à ce qui se passe chez moi, à la maison.",
             "value": 4
           },
           {
-            "name": "Je n'ai plus de vie sociale à cause du mal de dos.",
+            "label": "Je n'ai plus de vie sociale à cause du mal de dos.",
             "value": 5
           }
         ]
@@ -797,35 +797,35 @@
     "fields": [
       {
         "type": "radio",
-        "label": "10: Déplacement (en voiture ou par les transports en commun)",
+        "legend": "10: Déplacement (en voiture ou par les transports en commun)",
         "name": "odiQuestion10",
         "required": true,
         "values": [
           {
-            "name": "Je peux voyager partout sans douleur.",
+            "label": "Je peux voyager partout sans douleur.",
             "value": 0
           },
           {
-            "name":
+            "label":
               "Je peux voyager partout, mais cela occasionne une augmentation des douleurs.",
             "value": 1
           },
           {
-            "name":
+            "label":
               "Les douleurs sont bien présentes, mais je peux effectuer un trajet de plus de deux heures",
             "value": 2
           },
           {
-            "name": "Les douleurs m'empêchent tout trajet de plus d'une heure.",
+            "label": "Les douleurs m'empêchent tout trajet de plus d'une heure.",
             "value": 3
           },
           {
-            "name":
+            "label":
               "Les douleurs ne me permettent que de courts trajets nécessaires de moins de 30 minutes.",
             "value": 4
           },
           {
-            "name":
+            "label":
               "Les douleurs m'empêchent tout trajet, sauf pour recevoir un traitement.",
             "value": 5
           }

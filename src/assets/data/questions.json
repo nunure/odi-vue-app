@@ -33,6 +33,26 @@
     "title": "Informations",
     "fields": [
       {
+        "type": "select",
+        "legend": "Sexe",
+        "name": "sex",
+        "required": true,
+        "values": [
+          {
+            "label": "M.",
+            "value": "mr"
+          },
+          {
+            "label": "Mme.",
+            "value": "mrs"
+          },
+          {
+            "label": "Autre.",
+            "value": "other"
+          }
+        ]
+      },
+      {
         "type": "input_string",
         "legend": "Nom",
         "name": "first_name",
@@ -56,7 +76,7 @@
         "type": "input_string",
         "legend": "Nom de votre médecin traitant",
         "name": "medical_consultant",
-        "placeholder": "Dr House",
+        "placeholder": "House",
         "required": true
       },
       {
@@ -84,6 +104,7 @@
           { "label": "Employés", "value": "Employés" },
           { "label": "Ouvriers", "value": "Ouvriers" },
           { "label": "Retraités", "value": "Retraités" },
+          { "label": "Chômeur", "value": "Chomeur" },
           {
             "label": "Autres personnes sans activité professionnelle",
             "value": "Autres personnes sans activité professionnelle"
@@ -113,7 +134,7 @@
       },
       {
         "type": "select",
-        "legend": "Avez-vous déjà été opéré(e) ?",
+        "legend": "Avez-vous déjà été opéré(e) ? (opération du dos)",
         "name": "operateBefore",
         "required": true,
         "values": [
@@ -140,24 +161,98 @@
       },
       {
         "type": "input_string",
+        "legend": "Pourquoi ?",
+        "name": "operation_cause",
+        "required": true,
+        "visibleIf":
+        {
+          "name": "operateBefore",
+          "value": true
+        }
+      },
+      {
+        "type": "select",
         "legend": "Avez-vous des maladies que vous soignez au long cours ?",
+        "name": "has_long_term_illnesses",
+        "required": true,
+        "values": [
+          {
+            "label": "Oui",
+            "value": true
+          },
+          {
+            "label": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "input_string",
+        "legend": "La ou lesquelles ?",
         "name": "long_term_illnesses",
         "placeholder": "rhume",
-        "required": true
+        "required": true,
+        "visibleIf":
+        {
+          "name": "has_long_term_illnesses",
+          "value": true
+        }
       },
       {
-        "type": "input_string",
+        "type": "select",
         "legend": "Avez-vous des allergies ?",
-        "name": "allergies",
-        "placeholder": "Tension, diabète...",
-        "required": true
+        "name": "has_allergies",
+        "required": true,
+        "values": [
+          {
+            "label": "Oui",
+            "value": true
+          },
+          {
+            "label": "Non",
+            "value": false
+          }
+        ]
       },
       {
         "type": "input_string",
-        "legend": "Prenez-vous des médicaments de manière habituelle ?",
+        "legend": "La ou lesquelles ?",
+        "name": "allergies",
+        "placeholder": "Chats",
+        "required": true,
+        "visibleIf":
+        {
+          "name": "has_allergies",
+          "value": true
+        }
+      },
+      {
+        "type": "select",
+        "legend": "Prenez-vous des médicaments de manière habituelle ? (En dehors de ceux pour le mal de dos)",
+        "name": "has_medication",
+        "required": true,
+        "values": [
+          {
+            "label": "Oui",
+            "value": true
+          },
+          {
+            "label": "Non",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "input_string",
+        "legend": "Le ou lesquels ?",
         "name": "medication",
         "placeholder": "Cyanure",
-        "required": true
+        "required": true,
+        "visibleIf":
+        {
+          "name": "has_medication",
+          "value": true
+        }
       },
       {
         "type": "input_string",
@@ -421,7 +516,7 @@
       },
       {
         "type": "range",
-        "legend": "Concernant vos douleurs lqui irradient vers les jambes",
+        "legend": "Concernant vos douleurs qui irradient vers les jambes",
         "name": "rangeLegPain",
         "required": true
       }

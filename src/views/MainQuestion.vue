@@ -38,7 +38,7 @@ export default {
   },
   created() {
     // get all questionnaire
-    this.$http.get("http://localhost:3000/questions").then(
+    this.$http.get("http://localhost:3000/api/questions").then(
       response => {
         this.datas = response.data;
         this.nbPage = Object.keys(this.datas).length;
@@ -49,7 +49,7 @@ export default {
       }
     );
     // get a new empty model for responses
-    this.$http.get("http://localhost:3000/answers/createEmpty").then(
+    this.$http.get("http://localhost:3000/api/answers/createEmpty").then(
       response => {
         this.answer = response.data;
       },

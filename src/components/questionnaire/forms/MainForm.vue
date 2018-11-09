@@ -128,7 +128,10 @@ export default {
         // This is the end of the questionnaire
         // PUT result to the back
         this.$http
-          .put("http://localhost:3000/api/answers", this.$parent.$parent.answer)
+          .put(
+            process.env.BACK_URL || "http://localhost:3000" + "/api/answers",
+            this.$parent.$parent.answer
+          )
           .then(
             response => {
               this.$router.push("send_question"); // DEBUG

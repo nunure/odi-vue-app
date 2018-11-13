@@ -129,7 +129,7 @@ export default {
         // PUT result to the back
         this.$http
           .put(
-            process.env.BACK_URL || "http://localhost:3000" + "/api/answers",
+            (process.env.BACK_URL || "http://localhost:3000") + "/api/answers",
             this.$parent.$parent.answer
           )
           .then(

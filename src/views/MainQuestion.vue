@@ -39,7 +39,7 @@ export default {
   created() {
     // get all questionnaire
     this.$http
-      .get(process.env.BACK_URL || "http://localhost:3000" + "/api/questions")
+      .get((process.env.BACK_URL || "http://localhost:3000") + "/api/questions")
       .then(
         response => {
           this.datas = response.data;
@@ -53,8 +53,8 @@ export default {
     // get a new empty model for responses
     this.$http
       .get(
-        process.env.BACK_URL ||
-          "http://localhost:3000" + "/api/answers/createEmpty"
+        (process.env.BACK_URL || "http://localhost:3000") +
+          "/api/answers/createEmpty"
       )
       .then(
         response => {
@@ -64,7 +64,7 @@ export default {
           // @TODO: handle http error
           console.error(response);
         }
-    );
+    ); //eslint-disable-line
   },
   methods: {
     visible(key) {

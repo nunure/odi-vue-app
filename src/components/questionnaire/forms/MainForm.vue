@@ -127,21 +127,16 @@ export default {
         // this.$parent.$parent.activeStep--; // DEBUG
         // This is the end of the questionnaire
         // PUT result to the back
-        this.$http
-          .put(
-            (process.env.BACK_URL || "http://localhost:3000") + "/api/answers",
-            this.$parent.$parent.answer
-          )
-          .then(
-            response => {
-              this.$router.push("send_question"); // DEBUG
-              console.log(response);
-            },
-            response => {
-              // @TODO: handle http error
-              console.error(response);
-            }
-          ); //eslint-disable-line
+        this.$http.put("api/answers", this.$parent.$parent.answer).then(
+          response => {
+            this.$router.push("send_question"); // DEBUG
+            console.log(response);
+          },
+          response => {
+            // @TODO: handle http error
+            console.error(response);
+          }
+        );
       }
     },
     onPrevious() {

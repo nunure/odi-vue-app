@@ -38,33 +38,26 @@ export default {
   },
   created() {
     // get all questionnaire
-    this.$http
-      .get((process.env.BACK_URL || "http://localhost:3000") + "/api/questions")
-      .then(
-        response => {
-          this.datas = response.data;
-          this.nbPage = Object.keys(this.datas).length;
-        },
-        response => {
-          // @TODO: handle http error
-          console.error(response);
-        }
-      );
+    this.$http.get("api/questions").then(
+      response => {
+        this.datas = response.data;
+        this.nbPage = Object.keys(this.datas).length;
+      },
+      response => {
+        // @TODO: handle http error
+        console.error(response);
+      }
+    );
     // get a new empty model for responses
-    this.$http
-      .get(
-        (process.env.BACK_URL || "http://localhost:3000") +
-          "/api/answers/createEmpty"
-      )
-      .then(
-        response => {
-          this.answer = response.data;
-        },
-        response => {
-          // @TODO: handle http error
-          console.error(response);
-        }
-    ); //eslint-disable-line
+    this.$http.get("api/answers/createEmpty").then(
+      response => {
+        this.answer = response.data;
+      },
+      response => {
+        // @TODO: handle http error
+        console.error(response);
+      }
+    );
   },
   methods: {
     visible(key) {

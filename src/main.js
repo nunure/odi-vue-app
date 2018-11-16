@@ -14,6 +14,9 @@ Vue.use(ElementUI, { locale });
 
 Vue.config.productionTip = false;
 
+// Allow vue-ressource too set a path before sending request to back api
+Vue.http.options.root = process.env.VUE_APP_API_URL;
+
 new Vue({
   router,
   render: h => h(App)

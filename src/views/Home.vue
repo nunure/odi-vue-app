@@ -49,24 +49,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.card-image {
-  height: 250px;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.el-card {
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.card-title {
-  font-weight: bold;
-  padding: 14px;
-  text-align: center;
-}
-</style>

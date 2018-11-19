@@ -5,7 +5,7 @@
 
     <el-row :gutter="20">
       <el-col :span="8">
-        <div @click="startQuestionnaire()">
+        <div @click="openQuestionnaire('questionnaire')">
           <el-card shadow="hover">
             <img
               src="@/assets/images/NFS.jpg"
@@ -21,14 +21,16 @@
         v-for="o in 6"
         :span="8"
         :key="o">
-        <el-card shadow="hover">
-          <img
-            :src="'http://lorempicsum.com/futurama/300/200/' + o "
-            class="card-image">
-          <div class="card-title">
-            <span>Questionnaire n° {{ o }}</span>
-          </div>
-        </el-card>
+        <div @click="openQuestionnaire('empty_question')">
+          <el-card shadow="hover">
+            <img
+              :src="'http://lorempicsum.com/futurama/300/200/' + o "
+              class="card-image">
+            <div class="card-title">
+              <span>Questionnaire n° {{ o }}</span>
+            </div>
+          </el-card>
+        </div>
       </el-col>
 
     </el-row>
@@ -43,8 +45,8 @@ export default {
   },
   created() {},
   methods: {
-    startQuestionnaire() {
-      this.$router.push("questionnaire");
+    openQuestionnaire(route) {
+      this.$router.push(route);
     }
   }
 };

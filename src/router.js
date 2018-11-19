@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Home from "@/views/Home";
 import Questionnaire from "@/views/MainQuestion";
 import SendQuestion from "@/views/SendQuestion";
 
@@ -8,7 +9,11 @@ Vue.use(Router);
 const router = new Router({
   mode: "history",
   routes: [
-    { path: "/", redirect: "/questionnaire" },
+    {
+      path: "/",
+      name: "Accueil",
+      component: Home
+    },
     {
       path: "/questionnaire",
       name: "Questionnaire",

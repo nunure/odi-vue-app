@@ -1,6 +1,6 @@
 <template>
   <el-container id="app">
-    <!--<app-nav/>-->
+    <app-nav />
 
     <el-main>
       <el-row
@@ -29,12 +29,12 @@
 
 
 <script>
-//import AppNav from "@/components/AppNav";
+import AppNav from "@/components/AppNav";
 import AppFooter from "@/components/AppFooter";
 
 export default {
   name: "App",
-  components: { /*AppNav,*/ AppFooter },
+  components: { AppNav, AppFooter },
   data() {
     return {};
   }

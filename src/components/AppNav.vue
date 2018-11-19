@@ -1,35 +1,28 @@
 <template>
-  <div class="container AppNav">
-    <nav class="navbar navbar-expand-lg navbar-light bg-faded">
-      <button
-        class="navbar-toggler navbar-toggler-right"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
-        aria-controls="navbarCollapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" />
-      </button>
-      <router-link
-        tag="a"
-        to="/">
-        <a class="navbar-brand nav-link">
-          <img
-            src="../assets/images/logo.png"
-            class="ev-appnav__logo">
-        </a>
-      </router-link>
-      <div
-        id="navbarCollapse"
-        class="collapse navbar-collapse">
-        <div class="navbar-nav">
-          <tab name="Accueil" />
-          <tab name="Questionnaire" />
-          <tab name="Contact" />
-        </div>
-      </div>
-    </nav>
+  <div class="app-nav">
+
+    <el-menu
+      :default-active="activeIndex"
+      :router="true"
+      mode="horizontal">
+      <el-menu-item index="/">
+        <router-link
+          tag="a"
+          to="/">
+          <a class="navbar-brand nav-link">
+            <img
+              src="../assets/images/logo.png"
+              class="ev-appnav__logo">
+          </a>
+        </router-link>
+      </el-menu-item>
+      <el-menu-item index="/">Accueil</el-menu-item>
+
+      <!-- <el-menu-item index="/questionnaire">Questionnaire</el-menu-item>
+      <el-menu-item index="3">Orders</el-menu-item> -->
+    </el-menu>
+
+
   </div>
 </template>
 
@@ -53,7 +46,12 @@ Vue.component("tab", {
 });
 
 export default {
-  name: "AppNav"
+  name: "AppNav",
+  data() {
+    return {
+      activeIndex: "/"
+    };
+  }
 };
 </script>
 

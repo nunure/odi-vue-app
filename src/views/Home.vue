@@ -23,10 +23,10 @@
         :key="o">
         <el-card shadow="hover">
           <img
-            :src="'http://lorempixel.com/300/200/cats/' + (o + 2)"
+            :src="'http://lorempicsum.com/futurama/300/200/' + o "
             class="card-image">
           <div class="card-title">
-            <span>Questionnaire test n° {{ o }}</span>
+            <span>Questionnaire n° {{ o }}</span>
           </div>
         </el-card>
       </el-col>

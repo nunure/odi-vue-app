@@ -21,14 +21,3 @@ export default {
   }
 };
 </script>
-
-
-<style scoped>
-.img__info {
-  width: 50%;
-  margin-right: 25%;
-  margin-left: 25%;
-  margin-top: 2em;
-  margin-bottom: 3em;
-}
-</style>

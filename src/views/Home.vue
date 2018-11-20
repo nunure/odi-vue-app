@@ -18,7 +18,7 @@
       </el-col>
 
       <el-col
-        v-for="o in 6"
+        v-for="o in 2"
         :span="8"
         :key="o">
         <div @click="openQuestionnaire('empty_question')">
@@ -32,7 +32,60 @@
           </el-card>
         </div>
       </el-col>
+    </el-row>
 
+    <el-row :gutter="20">
+      <el-col
+        v-for="o in 3"
+        :span="8"
+        :key="o">
+        <div @click="openQuestionnaire('empty_question')">
+          <el-card shadow="hover">
+            <img
+              :src="'http://lorempicsum.com/futurama/300/200/' + ( o + 2) "
+              class="card-image">
+            <div class="card-title">
+              <span>Questionnaire n° {{ ( o + 2) }}</span>
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+    </el-row>
+
+    <el-row :gutter="20">
+      <el-col
+        v-for="o in 3"
+        :span="8"
+        :key="o">
+        <div @click="openQuestionnaire('empty_question')">
+          <el-card shadow="hover">
+            <img
+              :src="'http://lorempicsum.com/futurama/300/200/' + ( o + 5) "
+              class="card-image">
+            <div class="card-title">
+              <span>Questionnaire n° {{ ( o + 5) }}</span>
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+    </el-row>
+
+    <el-row :gutter="20">
+      <el-col
+        v-for="o in 1"
+        :span="8"
+        :key="o">
+        <div @click="openQuestionnaire('empty_question')">
+          <el-card shadow="hover">
+            <img
+              :src="'http://lorempicsum.com/futurama/300/200/' + ( o + 8) "
+              class="card-image">
+            <div class="card-title">
+              <span>Questionnaire n° {{ ( o + 5) }}</span>
+            </div>
+          </el-card>
+        </div>
+      </el-col>
     </el-row>
 
   </div>
@@ -51,3 +104,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+
+</style>

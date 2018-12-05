@@ -24,7 +24,7 @@
         <div @click="openQuestionnaire('empty_question')">
           <el-card shadow="hover">
             <img
-              :src="'http://lorempicsum.com/futurama/300/200/' + o "
+              :src="'https://lorempicsum.com/futurama/300/200/' + o "
               class="card-image">
             <div class="card-title">
               <span>Questionnaire n° {{ o }}</span>
@@ -42,7 +42,7 @@
         <div @click="openQuestionnaire('empty_question')">
           <el-card shadow="hover">
             <img
-              :src="'http://lorempicsum.com/futurama/300/200/' + ( o + 2) "
+              :src="'https://lorempicsum.com/futurama/300/200/' + ( o + 2) "
               class="card-image">
             <div class="card-title">
               <span>Questionnaire n° {{ ( o + 2) }}</span>
@@ -60,7 +60,7 @@
         <div @click="openQuestionnaire('empty_question')">
           <el-card shadow="hover">
             <img
-              :src="'http://lorempicsum.com/futurama/300/200/' + ( o + 5) "
+              :src="'https://lorempicsum.com/futurama/300/200/' + ( o + 5) "
               class="card-image">
             <div class="card-title">
               <span>Questionnaire n° {{ ( o + 5) }}</span>
@@ -78,7 +78,7 @@
         <div @click="openQuestionnaire('empty_question')">
           <el-card shadow="hover">
             <img
-              :src="'http://lorempicsum.com/futurama/300/200/' + ( o + 8) "
+              :src="'https://lorempicsum.com/futurama/300/200/' + ( o + 8) "
               class="card-image">
             <div class="card-title">
               <span>Questionnaire n° {{ ( o + 5) }}</span>

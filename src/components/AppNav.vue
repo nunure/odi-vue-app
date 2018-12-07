@@ -18,7 +18,17 @@
       </el-menu-item>
       <el-menu-item index="/">Accueil</el-menu-item>
 
-      <!-- <el-menu-item index="/questionnaire">Questionnaire</el-menu-item>
+      <el-menu-item
+        v-if="!authenticated"
+        id="auth-menu"
+        index=""
+        @click="auth.login()"> Log In </el-menu-item>
+      <el-menu-item
+        v-if="authenticated"
+        id="auth-menu"
+        index=""
+        @click="auth.logout()"> Log Out </el-menu-item>
+        <!-- <el-menu-item index="/questionnaire">Questionnaire</el-menu-item>
       <el-menu-item index="3">Orders</el-menu-item> -->
     </el-menu>
 
@@ -47,6 +57,10 @@ Vue.component("tab", {
 
 export default {
   name: "AppNav",
+  props: {
+    auth: { type: Object, required: true },
+    authenticated: { type: Boolean, default: false, required: true }
+  },
   data() {
     return {
       activeIndex: "/"
@@ -61,5 +75,9 @@ export default {
 }
 .ev-appnav__logo {
   width: 40px;
+}
+
+#auth-menu {
+  float: right;
 }
 </style>

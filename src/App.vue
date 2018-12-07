@@ -1,6 +1,8 @@
 <template>
   <el-container id="app">
-    <app-nav />
+    <app-nav
+      :auth="auth"
+      :authenticated="authenticated" />
 
     <el-main>
       <el-row
@@ -13,7 +15,11 @@
           class="hidden-sm-and-down" />
         <el-col
           :span="18"
-          style="width: 100%"><router-view /></el-col>
+          style="width: 100%">
+          <router-view
+            :auth="auth"
+            :authenticated="authenticated" />
+        </el-col>
         <el-col
           :span="5"
           class="hidden-sm-and-down" />
@@ -31,12 +37,27 @@
 <script>
 import AppNav from "@/components/AppNav";
 import AppFooter from "@/components/AppFooter";
+import AuthService from "@/auth/AuthService";
+
+const auth = new AuthService();
+
+const { login, logout, authenticated, authNotifier } = auth;
 
 export default {
   name: "App",
   components: { AppNav, AppFooter },
   data() {
-    return {};
+    authNotifier.on("authChange", authState => {
+      this.authenticated = authState.authenticated;
+    });
+    return {
+      auth,
+      authenticated
+    };
+  },
+  methods: {
+    login,
+    logout
   }
 };
 </script>

@@ -24,10 +24,10 @@ export default {
 
 <style scoped>
 .img-empty {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1000px;
 }
 </style>

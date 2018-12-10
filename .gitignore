@@ -6,8 +6,7 @@ node_modules
 selenium-debug.log
 
 # local env files
-.env.local
-.env.*.local
+.env*
 auth0-variables.js
 
 # Log files

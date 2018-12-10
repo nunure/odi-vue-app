@@ -4,15 +4,12 @@
       v-show="visible"
       :label="question.legend"
       :prop="question.name"
-      :rules="rule">
-      <el-slider
-        v-model="inputVal"
-        :min="0"
-        :max="100" />
+      :rules="rule"
+    >
+      <el-slider v-model="inputVal" :min="0" :max="100" />
     </el-form-item>
   </div>
 </template>
-
 
 <script>
 export default {

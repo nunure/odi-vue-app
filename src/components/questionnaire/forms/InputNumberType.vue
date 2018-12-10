@@ -4,16 +4,17 @@
       v-show="visible"
       :label="question.legend"
       :prop="question.name"
-      :rules="rule">
+      :rules="rule"
+    >
       <el-input-number
         v-model="inputVal"
         :placeholder="question.placeholder"
         :name="question.name"
-        clearable />
+        clearable
+      />
     </el-form-item>
   </div>
 </template>
-
 
 <script>
 export default {

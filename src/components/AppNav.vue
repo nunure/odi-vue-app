@@ -1,18 +1,10 @@
 <template>
   <div class="app-nav">
-
-    <el-menu
-      :default-active="activeIndex"
-      :router="true"
-      mode="horizontal">
+    <el-menu :default-active="activeIndex" :router="true" mode="horizontal">
       <el-menu-item index="/">
-        <router-link
-          tag="a"
-          to="/">
+        <router-link tag="a" to="/">
           <a class="navbar-brand nav-link">
-            <img
-              src="../assets/images/logo.png"
-              class="ev-appnav__logo">
+            <img src="../assets/images/logo.png" class="ev-appnav__logo" />
           </a>
         </router-link>
       </el-menu-item>
@@ -22,17 +14,21 @@
         v-if="!authenticated"
         id="auth-menu"
         index=""
-        @click="auth.login()"> Log In </el-menu-item>
+        @click="auth.login()"
+      >
+        Log In
+      </el-menu-item>
       <el-menu-item
         v-if="authenticated"
         id="auth-menu"
         index=""
-        @click="auth.logout()"> Log Out </el-menu-item>
-        <!-- <el-menu-item index="/questionnaire">Questionnaire</el-menu-item>
+        @click="auth.logout()"
+      >
+        Log Out
+      </el-menu-item>
+      <!-- <el-menu-item index="/questionnaire">Questionnaire</el-menu-item>
       <el-menu-item index="3">Orders</el-menu-item> -->
     </el-menu>
-
-
   </div>
 </template>
 

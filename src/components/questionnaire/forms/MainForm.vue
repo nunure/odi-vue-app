@@ -3,76 +3,79 @@
     ref="answer_model"
     :model="answer_model"
     :rules="rule"
-    label-position="Top">
+    label-position="Top"
+  >
     <!-- Show information page if it's the first page -->
-    <div v-if="questions.page === 0">
-      <information />
-    </div>
-    <div v-if="questions.page >= 7">
-      <odi />
-    </div>
+    <div v-if="questions.page === 0"><information /></div>
+    <div v-if="questions.page >= 7"><odi /></div>
     <div v-else>
       <h1>{{ questions.title }}</h1>
     </div>
-    <div
-      v-for="question in questions.fields"
-      :key="question.name">
+    <div v-for="question in questions.fields" :key="question.name">
       {{ isVisible(question) }}
       <!-- radio button -->
       <div v-if="question.type === 'radio'">
         <RadioType
           v-model="answer_model[question.name]"
           :question="question"
-          :visible = "question.visible" />
+          :visible="question.visible"
+        />
       </div>
       <!-- Input text type -->
       <div v-else-if="question.type === 'input_string'">
         <InputTextType
           v-model="answer_model[question.name]"
           :question="question"
-          :visible = "question.visible" />
+          :visible="question.visible"
+        />
       </div>
       <!-- Input number type -->
       <div v-else-if="question.type === 'input_number'">
         <InputNumberType
           v-model="answer_model[question.name]"
           :question="question"
-          :visible = "question.visible" />
+          :visible="question.visible"
+        />
       </div>
       <!-- Date type , max is date of the day for birth day -->
       <div v-else-if="question.type === 'date'">
         <DateType
           v-model="answer_model[question.name]"
           :question="question"
-          :visible = "question.visible" />
+          :visible="question.visible"
+        />
       </div>
       <!-- select type -->
       <div v-else-if="question.type === 'select'">
         <SelectType
           v-model="answer_model[question.name]"
           :question="question"
-          :visible = "question.visible" />
+          :visible="question.visible"
+        />
       </div>
       <!-- Range type min 0 and max 100 -->
       <div v-else-if="question.type === 'range'">
         <RangeType
           v-model="answer_model[question.name]"
           :question="question"
-          :visible = "question.visible" />
+          :visible="question.visible"
+        />
       </div>
       <div v-else>
         <p>v else: {{ question.type }}</p>
       </div>
     </div>
     <el-form-item class="buttons">
-      <el-button
-        type="button"
-        class="btn-back"
-        @click="onPrevious()">Retour</el-button>
+      <el-button type="button" class="btn-back" @click="onPrevious()">
+        Retour
+      </el-button>
       <el-button
         type="primary"
         class="btn-submit"
-        @click="submitForm('answer_model')">Valider</el-button>
+        @click="submitForm('answer_model')"
+      >
+        Valider
+      </el-button>
     </el-form-item>
   </el-form>
 </template>

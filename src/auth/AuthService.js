@@ -1,7 +1,7 @@
 import auth0 from "auth0-js";
 // import { AUTH_CONFIG } from "./auth0-variables";
 import EventEmitter from "eventemitter3";
-import router from "./../router";
+import router from "../router";
 
 export default class AuthService {
   authenticated = this.isAuthenticated();

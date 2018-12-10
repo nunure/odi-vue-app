@@ -4,13 +4,14 @@
       v-show="visible"
       :label="question.legend"
       :prop="question.name"
-      :rules="rule">
+      :rules="rule"
+    >
       <el-radio-group
         v-for="input in question.values"
         :key="input.value"
-        v-model="inputVal">
-        <el-radio
-          :label="input.value">{{ input.label }}</el-radio>
+        v-model="inputVal"
+      >
+        <el-radio :label="input.value">{{ input.label }}</el-radio>
       </el-radio-group>
     </el-form-item>
   </div>

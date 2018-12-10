@@ -4,21 +4,19 @@
       v-show="visible"
       :label="question.legend"
       :prop="question.name"
-      :rules="rule">
-      <el-select
-        v-model="inputVal"
-        :name="question.name"
-        clearable>
+      :rules="rule"
+    >
+      <el-select v-model="inputVal" :name="question.name" clearable>
         <el-option
           v-for="input in question.values"
           :key="input.value"
           :value="input.value"
-          :label="input.label" />
+          :label="input.label"
+        />
       </el-select>
     </el-form-item>
   </div>
 </template>
-
 
 <script>
 export default {

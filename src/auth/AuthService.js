@@ -1,5 +1,5 @@
 import auth0 from "auth0-js";
-import { AUTH_CONFIG } from "./auth0-variables";
+// import { AUTH_CONFIG } from "./auth0-variables";
 import EventEmitter from "eventemitter3";
 import router from "./../router";
 
@@ -15,9 +15,9 @@ export default class AuthService {
   }
 
   auth0 = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
+    domain: process.env.VUE_APP_AUTH0_DOMAIN,
+    clientID: process.env.VUE_APP_AUTH0_CLIENT_ID,
+    redirectUri: process.env.VUE_APP_AUTH0_CALLBACK_URL,
     responseType: "token id_token",
     scope: "openid"
   });

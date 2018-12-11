@@ -12,7 +12,6 @@
       v-show="visible(questions.page)"
       :key="questions.page"
     >
-      >
       <main-form :questions="questions" />
     </el-main>
   </div>

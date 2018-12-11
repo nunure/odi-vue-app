@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/views/Home";
+import Questions from "@/views/Questions";
 import Questionnaire from "@/views/MainQuestion";
 import SendQuestion from "@/views/SendQuestion";
 import EmptyQuestion from "@/views/EmptyQuestion";
@@ -15,6 +16,11 @@ const router = new Router({
       path: "/",
       name: "Accueil",
       component: Home
+    },
+    {
+      path: "/questions",
+      name: "Questions",
+      component: Questions
     },
     {
       path: "/questionnaire",

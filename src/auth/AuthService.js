@@ -34,7 +34,7 @@ export default class AuthService {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        router.replace("/");
+        router.replace("/questions");
       } else if (err) {
         router.replace("/");
         console.log(err);

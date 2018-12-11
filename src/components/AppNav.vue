@@ -9,6 +9,7 @@
         </router-link>
       </el-menu-item>
       <el-menu-item index="/">Accueil</el-menu-item>
+      <el-menu-item index="/questions">Questions</el-menu-item>
 
       <el-menu-item
         v-if="!authenticated"
